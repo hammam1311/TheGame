@@ -14,9 +14,11 @@ class Game extends Component {
       this.props.dec();
     }, 1000);
   }
+
   componentWillUnmount() {
     clearInterval(this.usedHole);
   }
+
   IncreaseScore = () => {
     let newScore = this.state.score + 5;
     this.setState({ score: newScore });
