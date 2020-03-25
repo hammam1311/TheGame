@@ -12,6 +12,7 @@ class Circle extends Component {
     if (this.props.usedHole === 1) {
       this.props.Increment();
       this.setState({ pressed: true });
+
       setTimeout(() => {
         this.setState({ pressed: false });
       }, 1000);

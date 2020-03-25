@@ -14,7 +14,9 @@ class Game extends Component {
       this.props.dec();
     }, 1000);
   }
-
+  componentWillUnmount() {
+    clearInterval(this.usedHole);
+  }
   IncreaseScore = () => {
     let newScore = this.state.score + 5;
     this.setState({ score: newScore });
@@ -38,7 +40,7 @@ class Game extends Component {
     } else
       return (
         <div className="text-center">
-          <h1 className="animated tada ">Guac-A-Mole</h1>
+          <h1>Guac-A-Mole</h1>
           <h4>
             Time:
             <span
