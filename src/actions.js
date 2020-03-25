@@ -1,5 +1,6 @@
 const INCREMENT = "INCREMENT";
 const DECREMENT = "DECREMENT";
+const RESET = "RESET";
 
 //Increment The score
 export const increment = () => {
@@ -12,5 +13,12 @@ export const increment = () => {
 export const decrement = () => {
   return {
     type: DECREMENT
+  };
+};
+
+//RESET
+export const reset = () => {
+  return {
+    type: RESET
   };
 };

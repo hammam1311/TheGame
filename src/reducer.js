@@ -1,6 +1,7 @@
 const initialState = {
-  counter: 0,
-  time: 30
+  score: 0,
+  time: 5,
+  reset: false
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,14 +9,20 @@ const reducer = (state = initialState, action) => {
     case "INCREMENT":
       return {
         ...state,
-        counter: state.counter + 5
+        score: state.score + 5
       };
     case "DECREMENT":
       return {
         ...state,
         time: state.time - 1
       };
-
+    case "RESET":
+      return {
+        ...state,
+        score: 0,
+        time: 5,
+        reset: true
+      };
     default:
       return state;
   }
