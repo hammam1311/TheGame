@@ -1,11 +1,17 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Switch, Route } from "react-router-dom";
 import "./App.css";
+
+import Home from "./Home";
+import Game from "./Game";
 
 function App() {
   return (
-    <div className="App">
-      <h3>Hello Hammam :D</h3>
+    <div>
+      <Switch>
+        <Route exact path="/game" component={Game} />
+        <Route exact path="/" component={Home} />
+      </Switch>
     </div>
   );
 }
