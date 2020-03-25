@@ -6,7 +6,10 @@ const Home = () => {
 
     <div>
       <div className="align-center text-center " style={{ marginTop: "40px" }}>
-        <img src="https://images.squarespace-cdn.com/content/5a1c5ef4914e6b0913340490/1512002489057-APICYUNCIAQE5NS5OC7T/0.png?content-type=image%2Fpng" className="card-img-top" alt="..." />
+        <img src="https://images.squarespace-cdn.com/content/5a1c5ef4914e6b0913340490/1512002489057-APICYUNCIAQE5NS5OC7T/0.png?content-type=image%2Fpng"
+          className="card-img-top"
+          alt="..."
+          style={{ width: "70rem", height: "30rem" }} />
         <div className="card-body">
           <h5 className="card-title">Guac-A-Mole</h5>
           <p className="card-text">Make the Fastest and the most delicious guacamole!</p>

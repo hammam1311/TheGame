@@ -21,7 +21,7 @@ class Circle extends Component {
 
   render() {
     return (
-      <div className="align-center text-center">
+      <div >
         <div>
           <img
             src={
@@ -35,6 +35,7 @@ class Circle extends Component {
             width="200"
             height="180"
             onClick={this.handleClick}
+            className="img-fluid mx-auto"
           />
         </div>
       </div>
