@@ -10,7 +10,7 @@ class Game extends Component {
   };
 
   componentDidMount() {
-    this.holeIndex = setInterval(() => {
+    this.usedHole = setInterval(() => {
       this.props.dec();
     }, 1000);
   }

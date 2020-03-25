@@ -1,6 +1,6 @@
 const initialState = {
   score: 0,
-  time: 5,
+  time: 10,
   reset: false
 };
 
@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         score: 0,
-        time: 5,
+        time: 10,
         reset: true
       };
     default:
