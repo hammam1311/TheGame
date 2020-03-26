@@ -17,7 +17,7 @@ class Circle extends Component {
 
       setTimeout(() => {
         this.setState({ pressed: false });
-      }, 2000);
+      }, 1000);
     }
   };
 

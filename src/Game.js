@@ -6,6 +6,9 @@ import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
 import Laila from "./images/Laila.png";
 import Mama from "./mama";
+import Shop from "./images/shop.jpg";
+
+import Mama_Ayshih from "./images/Mama_Ayshih.png";
 let lastHole;
 
 class Game extends Component {
@@ -43,19 +46,17 @@ class Game extends Component {
       return <EndGame />;
     } else
       return (
-        <div className=" container-fluid text-center row ">
+        <div className=" container-fluid text-center row  2vh">
           <span className=" container-fluid border border-dark col-3">
-            <b>under construction</b>
-            <br></br>
+            <b>Mama Ayshih</b>
+            <br />
             <img
-              src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
+              src={Mama_Ayshih}
               className="card-img-fluid col-6  "
-              alt="..."
+              alt="Om Lila"
             />
-            <br></br>
+            <br />
             <Mama />
-
-            <b>under construction</b>
           </span>
           <div className=" card col-6 align-center border border-dark">
             <h1>Guac-A-Mole</h1>
@@ -101,31 +102,15 @@ class Game extends Component {
                       />
                     ))}
                   </div>
-
-                  {/* <div className="row" style={{ marginLeft: "100px" }}>
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
-                  </div> */}
                 </div>
               </center>
             </div>
           </div>
-          <span className=" container-fluid border border-dark col-3">
-            <b>under construction</b>
+          <span className=" container-fluid border border-dark col-3 ">
+            <b>Shop</b>
             <br></br>
-            <img
-              src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img-fluid col-6"
-              alt="..."
-            />
-            <br></br>
-            <b>under construction</b>
+            <img src={Shop} className="card-img-fluid col-6" alt="M7al" />
+            <br />
           </span>
         </div>
       );
