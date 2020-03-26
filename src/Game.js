@@ -49,9 +49,8 @@ class Game extends Component {
             <br></br>
             <img
               src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img-fluid col-6-sm "
+              className="card-img-fluid col-6 "
               alt="..."
-              style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
             />
             <br></br>
             <Mama />
@@ -94,22 +93,16 @@ class Game extends Component {
                   className="card text-white bg-white  mb-3"
                   style={{ width: "36rem" }}
                 >
-                  <div className="row ">
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
+                  <div className="row align-center ">
+                    {this.state.holes.map(holeID => (
+                      <Circle
+                        usedHole={this.randomHoles(this.state.holes)}
+                        score={() => this.IncreaseScore}
+                      />
+                    ))}
                   </div>
 
-                  <div className="row" style={{ marginLeft: "100px" }}>
+                  {/* <div className="row" style={{ marginLeft: "100px" }}>
                     <Circle
                       usedHole={this.randomHoles(this.state.holes)}
                       score={() => this.IncreaseScore}
@@ -118,7 +111,7 @@ class Game extends Component {
                       usedHole={this.randomHoles(this.state.holes)}
                       score={() => this.IncreaseScore}
                     />
-                  </div>
+                  </div> */}
                 </div>
               </center>
             </div>
@@ -128,9 +121,8 @@ class Game extends Component {
             <br></br>
             <img
               src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img-fluid col-6-sm "
+              className="card-img-fluid col-6"
               alt="..."
-              style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
             />
             <br></br>
             <b>under construction</b>
