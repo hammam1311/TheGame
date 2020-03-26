@@ -15,14 +15,14 @@ class Circle extends Component {
 
       setTimeout(() => {
         this.setState({ pressed: false });
-      }, 1000);
+      }, 2000);
     }
   };
 
   render() {
     return (
       <div>
-        <div>
+        <div className="mt-5 ml-4 ">
           <img
             src={
               this.state.pressed
@@ -32,8 +32,8 @@ class Circle extends Component {
                 : Empty
             }
             alt="Logo"
-            width="200"
-            height="180"
+            width="150"
+            height="130"
             onClick={this.handleClick}
           />
         </div>

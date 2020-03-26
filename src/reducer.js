@@ -1,6 +1,6 @@
 const initialState = {
   score: 0,
-  time: 1000,
+  time: 10,
   reset: false
 };
 
