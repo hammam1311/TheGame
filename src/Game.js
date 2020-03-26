@@ -5,6 +5,10 @@ import Circle from "./Circle";
 import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
 import Laila from "./images/Laila.png";
+import mama from "./images/mama.png";
+import mama_mad from "./images/mama_mad.png";
+
+import shop from "./images/shop.png";
 import Mama from "./mama";
 let lastHole;
 
@@ -45,19 +49,22 @@ class Game extends Component {
       return (
         <div className=" container-fluid text-center row ">
           <span className=" container-fluid border border-dark col-3">
-            <b>under construction</b>
+
             <br></br>
+
             <img
-              src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img-fluid col-6  "
+              src={mama}
+              className="card-img-fluid "
               alt="..."
+              style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
+
+
             />
-            <br></br>
             <Mama />
 
-            <b>under construction</b>
           </span>
-          <div className=" card col-6 align-center border border-dark">
+          <div className=" card col-6 align-center border border-dark "
+            style={{ background: "rgba(255, 255, 255, 0.71)" }}>
             <h1>Guac-A-Mole</h1>
             <h4>
               Time:
@@ -76,7 +83,7 @@ class Game extends Component {
                 src={coin}
                 className="card-img col-6-sm "
                 alt="..."
-                style={{ width: "2rem", height: "2rem", marginLeft: "5px" }}
+                style={{ width: "2.5vh", height: "2.5vh", marginLeft: "5px" }}
               />
             </h3>
 
@@ -86,12 +93,12 @@ class Game extends Component {
                   src={Laila}
                   className="card-img col-6-sm "
                   alt="..."
-                  style={{ width: "13rem", height: "17rem", marginLeft: "5px" }}
+                  style={{ width: "26vh", height: "34vh", marginLeft: "5px" }}
                 />
 
                 <div
                   className="card text-white bg-white  mb-3"
-                  style={{ width: "36rem" }}
+                  style={{ width: "72vh" }}
                 >
                   <div className="row align-center ">
                     {this.state.holes.map(holeID => (
@@ -117,15 +124,15 @@ class Game extends Component {
             </div>
           </div>
           <span className=" container-fluid border border-dark col-3">
-            <b>under construction</b>
             <br></br>
             <img
-              src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img-fluid col-6"
+              src={shop}
+              className="card-img-fluid "
               alt="..."
+              style={{ width: "50vh", height: "45vh", marginLeft: "5px" }}
+
             />
             <br></br>
-            <b>under construction</b>
           </span>
         </div>
       );

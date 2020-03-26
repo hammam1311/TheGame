@@ -8,11 +8,17 @@ import bg from "./images/bg.jpg"
 
 function App() {
   return (
-    <div style={{ backgroundImage: `url(${bg})` }} className="text-cent" >
-      <Switch>
-        <Route exact path="/game" component={Game} />
-        <Route exact path="/" component={Home} />
-      </Switch>
+    <div className="container-fluid"
+      style={{ width: "1920px", height: "1080px" }}
+    >
+      <div style={{ backgroundImage: `url(${bg})` }} className="text-cent" >
+
+
+        <Switch>
+          <Route exact path="/game" component={Game} />
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </div>
     </div>
   );
 }

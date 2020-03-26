@@ -17,7 +17,7 @@ class Circle extends Component {
 
       setTimeout(() => {
         this.setState({ pressed: false });
-      }, 2000);
+      }, 1000);
     }
   };
 
@@ -30,8 +30,8 @@ class Circle extends Component {
               this.state.pressed
                 ? Guacamole
                 : this.props.usedHole === 1
-                ? Avocado
-                : Empty
+                  ? Avocado
+                  : Empty
             }
             alt="Logo"
             width="150"
