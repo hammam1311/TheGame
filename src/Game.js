@@ -7,12 +7,10 @@ import coin from "./images/coin.jpg";
 import Laila from "./images/Laila.png";
 import mama from "./images/mama.png";
 import mama_mad from "./images/mama_mad.png";
-
 import shop from "./images/shop.png";
 import Mama from "./mama";
-import Shop from "./images/shop.jpg";
-
-import Mama_Ayshih from "./images/Mama_Ayshih.png";
+import customers from "./Data/CustomerData";
+import CustomerCard from "./customerCards";
 let lastHole;
 
 class Game extends Component {
@@ -52,7 +50,6 @@ class Game extends Component {
       return (
         <div className=" container-fluid text-center row  2vh">
           <span className=" container-fluid border border-dark col-3">
-
             <br></br>
 
             <img
@@ -60,14 +57,14 @@ class Game extends Component {
               className="card-img-fluid "
               alt="..."
               style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
-
-
             />
             <Mama />
-
           </span>
-          <div className=" card col-6 align-center border border-dark "
-            style={{ background: "rgba(255, 255, 255, 0.71)" }}>
+
+          <div
+            className=" card col-6 align-center border border-dark "
+            style={{ background: "rgba(255, 255, 255, 0.71)" }}
+          >
             <h1>Guac-A-Mole</h1>
             <h4>
               Time:
@@ -108,21 +105,29 @@ class Game extends Component {
                       <Circle
                         usedHole={this.randomHoles(this.state.holes)}
                         score={() => this.IncreaseScore}
+                        key={this.state.holes.index + "/"}
                       />
                     ))}
                   </div>
                 </div>
               </center>
+              <div className="row ">
+                {this.props.customers.map(customer => (
+                  <CustomerCard
+                    key={customer.id + customer.name}
+                    customer={customer}
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <span className=" container-fluid border border-dark col-3">
             <br></br>
             <img
               src={shop}
-              className="card-img-fluid "
+              className="card-img-fluid  "
               alt="..."
-              style={{ width: "50vh", height: "45vh", marginLeft: "5px" }}
-
+              style={{ width: "50vh", height: "45vh", marginLeft: "-10px" }}
             />
             <br></br>
           </span>
@@ -142,7 +147,8 @@ const mapDispatchToProps = dispatch => {
   return {
     Increment: () => dispatch({ type: INCREMENT }),
     dec: () => dispatch({ type: DECREMENT }),
-    reset: () => dispatch({ type: RESET })
+    reset: () => dispatch({ type: RESET }),
+    customers
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

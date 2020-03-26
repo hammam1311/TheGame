@@ -24,18 +24,18 @@ class Circle extends Component {
   render() {
     return (
       <div>
-        <div className="mt-5 ml-4 ">
+        <div className="mt-5 ml-4 col-3 align-center ">
           <img
             src={
               this.state.pressed
                 ? Guacamole
                 : this.props.usedHole === 1
-                  ? Avocado
-                  : Empty
+                ? Avocado
+                : Empty
             }
             alt="Logo"
-            width="150"
-            height="130"
+            width="100hv"
+            height="80hv"
             onClick={this.handleClick}
           />
         </div>
