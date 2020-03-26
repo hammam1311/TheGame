@@ -2,7 +2,7 @@ import { INCREMENT, DECREMENT, RESET } from "../actions/actionTypes";
 
 const initialState = {
   score: 0,
-  time: 10,
+  time: 10000,
   reset: false
 };
 

@@ -5,7 +5,7 @@ import Circle from "./Circle";
 import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
 import Laila from "./images/Laila.png";
-import Mama from "./mama"
+import Mama from "./mama";
 let lastHole;
 
 class Game extends Component {
@@ -49,7 +49,7 @@ class Game extends Component {
             <br></br>
             <img
               src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img-fluid col-6 "
+              className="card-img-fluid col-6  "
               alt="..."
             />
             <br></br>
