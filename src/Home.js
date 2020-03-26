@@ -11,9 +11,11 @@ const Home = () => {
           alt="..."
           style={{ width: "70rem", height: "30rem" }} />
         <div className="card-body">
-          <h5 className="card-title">Guac-A-Mole</h5>
-          <p className="card-text">Make the Fastest and the most delicious guacamole!</p>
-          <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+          <h3 className="card-title">Guac-A-Mole</h3>
+          <h4 className="card-text">Make the Fastest and the most delicious guacamole!</h4>
+          <br></br>
+          <p className="card-text"><b className="text">What did the avocado say to the fork? “You guac my world.”</b></p>
+          <p className="card-text"><b className="text">What’s an avocado’s favorite kind of exercise? Avocardio!</b></p>
           <Link to="/game">
             <button
               type="button"

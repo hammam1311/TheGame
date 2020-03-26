@@ -43,7 +43,21 @@ class Game extends Component {
       return (
         <div className=" container-fluid text-center row ">
           <span class=" container-fluid border border-dark col-3">
-            hhhhhhhhhhhhhhh
+            <b>
+              under construction
+            </b>
+            <br></br>
+            <img
+              src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
+              className="card-img col-6-sm "
+              alt="..."
+              style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
+            />
+            <br></br>
+
+            <b>
+              under construction
+            </b>
           </span>
           <div className=" card col-6 align-center border border-dark">
             <h1>Guac-A-Mole</h1>
@@ -111,7 +125,21 @@ class Game extends Component {
             </div>
           </div>
           <span className=" container-fluid border border-dark col-3">
-            hhhhhhhhhhhhhhhhhhhhhhhhhh
+            <b>
+              under construction
+            </b>
+            <br></br>
+            <img
+              src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
+              className="card-img col-6-sm "
+              alt="..."
+              style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
+            />
+            <br></br>
+
+            <b>
+              under construction
+            </b>
           </span>
         </div>
       );

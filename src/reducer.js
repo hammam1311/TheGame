@@ -20,7 +20,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         score: 0,
-        time: 1000,
+        time: 10,
         reset: true
       };
     default:
