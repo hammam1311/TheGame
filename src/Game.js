@@ -65,7 +65,7 @@ class Game extends Component {
                 className="card-img col-6-sm "
                 alt="..."
                 style={{ width: "2rem", height: "2rem", marginLeft: "5px" }}
-              />{" "}
+              />
             </h3>
 
             <div className="container-fluid align-center">
@@ -74,7 +74,7 @@ class Game extends Component {
                   src={Laila}
                   className="card-img col-6-sm "
                   alt="..."
-                  style={{ width: "17rem", height: "28rem", marginLeft: "5px" }}
+                  style={{ width: "13rem", height: "17rem", marginLeft: "5px" }}
                 />
 
                 <div
@@ -89,7 +89,7 @@ class Game extends Component {
                     <Circle
                       usedHole={this.randomHoles(this.state.holes)}
                       score={() => this.IncreaseScore}
-                    />{" "}
+                    />
                     <Circle
                       usedHole={this.randomHoles(this.state.holes)}
                       score={() => this.IncreaseScore}
@@ -100,7 +100,7 @@ class Game extends Component {
                     <Circle
                       usedHole={this.randomHoles(this.state.holes)}
                       score={() => this.IncreaseScore}
-                    />{" "}
+                    />
                     <Circle
                       usedHole={this.randomHoles(this.state.holes)}
                       score={() => this.IncreaseScore}
