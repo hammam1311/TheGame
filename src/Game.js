@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Circle from "./Circle";
 import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
+import Laila from "./images/Laila.png";
 let lastHole;
 
 class Game extends Component {
@@ -41,10 +42,10 @@ class Game extends Component {
     } else
       return (
         <div className=" container-fluid text-center row ">
-          <div className="col-2 align-center">
-            hhhhhhhhhhhhhhhhhhhhhhhhh
-          </div>
-          <div className="col-8 align-center">
+          <span class=" container-fluid border border-dark col-3">
+            hhhhhhhhhhhhhhh
+          </span>
+          <div className=" card col-6 align-center border border-dark">
 
 
             <h1>Guac-A-Mole</h1>
@@ -71,49 +72,55 @@ class Game extends Component {
 
 
             <div className="container-fluid align-center">
+              <center>
 
-              <div className="row ">
-                <div className=" ">
-                  <Circle
-                    usedHole={this.randomHoles(this.state.holes)}
-                    score={() => this.IncreaseScore}
-                  />
+                <img src={Laila}
+                  className="card-img col-6-sm "
+                  alt="..."
+                  style={{ width: "17rem", height: "28rem", marginLeft: "5px" }} />
+
+                <div class="card text-white bg-white  mb-3" style={{ width: "36rem" }}>
+
+                  <div className="row ">
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />
+
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />{" "}
+
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />
+
+                  </div>
+
+                  <div className="row" style={{ marginLeft: "100px" }}>
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />{" "}
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />
+                  </div>
                 </div>
+              </center>
 
-                <div className=" ">
-                  <Circle
-                    usedHole={this.randomHoles(this.state.holes)}
-                    score={() => this.IncreaseScore}
-                  />{" "}
-
-
-                </div>
-                <div className=" ">
-
-                  <Circle
-                    usedHole={this.randomHoles(this.state.holes)}
-                    score={() => this.IncreaseScore}
-                  />
-
-                </div>
-              </div>
-
-              <div className="row" style={{ marginLeft: "100px" }}>
-                <Circle
-                  usedHole={this.randomHoles(this.state.holes)}
-                  score={() => this.IncreaseScore}
-                />{" "}
-                <Circle
-                  usedHole={this.randomHoles(this.state.holes)}
-                  score={() => this.IncreaseScore}
-                />
-              </div>
             </div>
 
+
+
           </div>
-          <div className="col-2 align-center">
+          <span className=" container-fluid border border-dark col-3">
             hhhhhhhhhhhhhhhhhhhhhhhhhh
-          </div>
+          </span>
+
         </div >
       );
   }
