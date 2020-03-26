@@ -21,7 +21,7 @@ class Circle extends Component {
 
   render() {
     return (
-      <div className="align-center text-center">
+      <div>
         <div>
           <img
             src={
