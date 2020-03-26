@@ -1,4 +1,4 @@
-jokes = ["What do you call a blesses avocado? Holy guacamole.",
+jokes = ["What do you call a blessed avocado? Holy guacamole.",
     "What do you say to an avocado who’s done a good job?“Bravocado!”",
     "What did the tortilla chip say to the guacamole? “You are all I avo wanted.”",
     "What did the avocado say to the fork? “You guac my world.”",
@@ -24,7 +24,7 @@ customers = [{
 {
     name: "Azooz",
     order: 8,
-    comments: "object object object object object javascript object"
+    comments: "My name is Azooz and I have the power of objects"
 },
 {
     name: "AUB",
@@ -70,6 +70,6 @@ customers = [{
 {
     name: "Sarah",
     order: 15,
-    comments: "if I dont get the order in time you have to baby-shark dance"
+    comments: "if I dont get the order on time you have to baby-shark dance"
 },
 ]

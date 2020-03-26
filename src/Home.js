@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import mama from "./mama"
+import backstory from "./images/backstory.jpg"
 
 const Home = () => {
   return (
 
     <div>
-      <div className="align-center text-center " style={{ marginTop: "40px" }}>
-        <img src="https://images.squarespace-cdn.com/content/5a1c5ef4914e6b0913340490/1512002489057-APICYUNCIAQE5NS5OC7T/0.png?content-type=image%2Fpng"
-          className="card-img-top"
+      <div className="align-center text-center   " style={{ marginTop: "40px" }}>
+        <img src={backstory}
+          className="card-img-top border border-dark "
           alt="..."
-          style={{ width: "70rem", height: "30rem" }} />
-        <div className="card-body">
+          style={{ width: "70rem", height: "35rem", marginTop: "40px" }} />
+        <div className="card-body ">
           <h3 className="card-title">Guac-A-Mole</h3>
           <h4 className="card-text">Make the Fastest and the most delicious guacamole!</h4>
           <br></br>
@@ -25,6 +27,7 @@ const Home = () => {
               Start Game
        </button>
           </Link>
+          {mama}
         </div>
       </div>
     </div>

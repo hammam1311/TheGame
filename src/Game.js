@@ -5,6 +5,7 @@ import Circle from "./Circle";
 import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
 import Laila from "./images/Laila.png";
+import Mama from "./mama"
 let lastHole;
 
 class Game extends Component {
@@ -53,6 +54,7 @@ class Game extends Component {
               style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
             />
             <br></br>
+            <Mama />
 
             <b>under construction</b>
           </span>
@@ -131,7 +133,6 @@ class Game extends Component {
               style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
             />
             <br></br>
-
             <b>under construction</b>
           </span>
         </div>
