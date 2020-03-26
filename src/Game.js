@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import Circle from "./Circle";
 import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
+import Laila from "./images/Laila.png";
 let lastHole;
 
 class Game extends Component {
@@ -43,8 +44,17 @@ class Game extends Component {
     } else
       return (
         <div className=" container-fluid text-center row ">
+<<<<<<< HEAD
           <div className="col-2 align-center">hhhhhhhhhhhhhhhhhhhhhhhhh</div>
           <div className="col-8 align-center">
+=======
+          <span class=" container-fluid border border-dark col-3">
+            hhhhhhhhhhhhhhh
+          </span>
+          <div className=" card col-6 align-center border border-dark">
+
+
+>>>>>>> c4a767d64caccd927818fc708dff5aa21f604287
             <h1>Guac-A-Mole</h1>
             <h4>
               Time:
@@ -57,6 +67,7 @@ class Game extends Component {
               </span>
             </h4>
 
+<<<<<<< HEAD
             <h3 className="col-sm align-center text-center">
               {this.props.score}
               <img
@@ -74,8 +85,61 @@ class Game extends Component {
                     usedHole={this.randomHoles(this.state.holes)}
                     score={() => this.IncreaseScore}
                   />
-                </div>
+=======
 
+
+            <h3 className="col-sm align-center text-center">{this.props.score}<img src={coin}
+              className="card-img col-6-sm "
+              alt="..."
+              style={{ width: "2rem", height: "2rem", marginLeft: "5px" }} /> </h3>
+
+
+
+
+
+            <div className="container-fluid align-center">
+              <center>
+
+                <img src={Laila}
+                  className="card-img col-6-sm "
+                  alt="..."
+                  style={{ width: "17rem", height: "28rem", marginLeft: "5px" }} />
+
+                <div class="card text-white bg-white  mb-3" style={{ width: "36rem" }}>
+
+                  <div className="row ">
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />
+
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />{" "}
+
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />
+
+                  </div>
+
+                  <div className="row" style={{ marginLeft: "100px" }}>
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />{" "}
+                    <Circle
+                      usedHole={this.randomHoles(this.state.holes)}
+                      score={() => this.IncreaseScore}
+                    />
+                  </div>
+>>>>>>> c4a767d64caccd927818fc708dff5aa21f604287
+                </div>
+              </center>
+
+<<<<<<< HEAD
                 <div className=" ">
                   <Circle
                     usedHole={this.randomHoles(this.state.holes)}
@@ -104,6 +168,18 @@ class Game extends Component {
           </div>
           <div className="col-2 align-center">hhhhhhhhhhhhhhhhhhhhhhhhhh</div>
         </div>
+=======
+            </div>
+
+
+
+          </div>
+          <span className=" container-fluid border border-dark col-3">
+            hhhhhhhhhhhhhhhhhhhhhhhhhh
+          </span>
+
+        </div >
+>>>>>>> c4a767d64caccd927818fc708dff5aa21f604287
       );
   }
 }
