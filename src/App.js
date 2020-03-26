@@ -4,7 +4,7 @@ import "./App.css";
 
 import Home from "./Home";
 import Game from "./Game";
-import bg from "./images/bg.jpg"
+import bg from "./images/bg.jpg";
 
 function App() {
   return (

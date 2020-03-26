@@ -10,6 +10,9 @@ import mama_mad from "./images/mama_mad.png";
 
 import shop from "./images/shop.png";
 import Mama from "./mama";
+import Shop from "./images/shop.jpg";
+
+import Mama_Ayshih from "./images/Mama_Ayshih.png";
 let lastHole;
 
 class Game extends Component {
@@ -47,7 +50,7 @@ class Game extends Component {
       return <EndGame />;
     } else
       return (
-        <div className=" container-fluid text-center row ">
+        <div className=" container-fluid text-center row  2vh">
           <span className=" container-fluid border border-dark col-3">
 
             <br></br>
@@ -108,17 +111,6 @@ class Game extends Component {
                       />
                     ))}
                   </div>
-
-                  {/* <div className="row" style={{ marginLeft: "100px" }}>
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
-                    <Circle
-                      usedHole={this.randomHoles(this.state.holes)}
-                      score={() => this.IncreaseScore}
-                    />
-                  </div> */}
                 </div>
               </center>
             </div>
