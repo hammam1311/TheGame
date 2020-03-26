@@ -4,6 +4,7 @@ import Empty from "./images/Empty.png";
 import Guacamole from "./images/guacamole.png";
 import { connect } from "react-redux";
 import { INCREMENT } from "./redux/actions/actionTypes";
+
 class Circle extends Component {
   state = {
     pressed: false
