@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { INCREMENT, DECREMENT, RESET } from "./redux/actions/actionTypes";
 import Circle from "./Circle";
 import EndGame from "./EndGame";
 import coin from "./images/coin.jpg";
@@ -42,22 +43,18 @@ class Game extends Component {
     } else
       return (
         <div className=" container-fluid text-center row ">
-          <span class=" container-fluid border border-dark col-3">
-            <b>
-              under construction
-            </b>
+          <span className=" container-fluid border border-dark col-3">
+            <b>under construction</b>
             <br></br>
             <img
               src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img col-6-sm "
+              className="card-img-fluid col-6-sm "
               alt="..."
               style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
             />
             <br></br>
 
-            <b>
-              under construction
-            </b>
+            <b>under construction</b>
           </span>
           <div className=" card col-6 align-center border border-dark">
             <h1>Guac-A-Mole</h1>
@@ -92,7 +89,7 @@ class Game extends Component {
                 />
 
                 <div
-                  class="card text-white bg-white  mb-3"
+                  className="card text-white bg-white  mb-3"
                   style={{ width: "36rem" }}
                 >
                   <div className="row ">
@@ -125,21 +122,17 @@ class Game extends Component {
             </div>
           </div>
           <span className=" container-fluid border border-dark col-3">
-            <b>
-              under construction
-            </b>
+            <b>under construction</b>
             <br></br>
             <img
               src="https://www.pngitem.com/pimgs/m/82-820082_clip-art-warning-sign-png-best-png-page.png"
-              className="card-img col-6-sm "
+              className="card-img-fluid col-6-sm "
               alt="..."
               style={{ width: "26rem", height: "26rem", marginLeft: "5px" }}
             />
             <br></br>
 
-            <b>
-              under construction
-            </b>
+            <b>under construction</b>
           </span>
         </div>
       );
@@ -148,16 +141,16 @@ class Game extends Component {
 
 const mapStateToProps = state => {
   return {
-    score: state.score,
-    time: state.time
+    score: state.operationsState.score,
+    time: state.operationsState.time
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    Increment: () => dispatch({ type: "INCREMENT" }),
-    dec: () => dispatch({ type: "DECREMENT" }),
-    reset: () => dispatch({ type: "RESET" })
+    Increment: () => dispatch({ type: INCREMENT }),
+    dec: () => dispatch({ type: DECREMENT }),
+    reset: () => dispatch({ type: RESET })
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

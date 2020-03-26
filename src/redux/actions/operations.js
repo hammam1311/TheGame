@@ -1,6 +1,4 @@
-const INCREMENT = "INCREMENT";
-const DECREMENT = "DECREMENT";
-const RESET = "RESET";
+import { INCREMENT, DECREMENT, RESET } from "./actionTypes";
 
 //Increment The score
 export const increment = () => {

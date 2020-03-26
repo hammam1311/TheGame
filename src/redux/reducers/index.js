@@ -1,11 +1,9 @@
 import { combineReducers } from "redux";
 // Reducers
-import holesReducer from "./holes";
-import avocadoReducer from "./avocado";
+import operationsReducer from "./operations";
 
 const rootReducer = combineReducers({
-  holes: holesReducer,
-  avocado: avocadoReducer
+  operationsState: operationsReducer
 });
 
 export default rootReducer;

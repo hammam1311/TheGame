@@ -3,6 +3,7 @@ import Avocado from "./images/Avocado.png";
 import Empty from "./images/Empty.png";
 import Guacamole from "./images/guacamole.png";
 import { connect } from "react-redux";
+import { INCREMENT } from "./redux/actions/actionTypes";
 class Circle extends Component {
   state = {
     pressed: false
@@ -44,13 +45,13 @@ class Circle extends Component {
 
 const mapStateToProps = state => {
   return {
-    pressed: state.score
+    pressed: state.operationsState.score
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    Increment: () => dispatch({ type: "INCREMENT" })
+    Increment: () => dispatch({ type: INCREMENT })
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Circle);

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Game from "./Game";
+import { INCREMENT, DECREMENT, RESET } from "./redux/actions/actionTypes";
+
 class EndGame extends Component {
   state = {
     reset: false
@@ -41,16 +43,16 @@ class EndGame extends Component {
 
 const mapStateToProps = state => {
   return {
-    score: state.score,
-    time: state.time
+    score: state.operationsState.score,
+    time: state.operationsState.time
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    Increment: () => dispatch({ type: "INCREMENT" }),
-    dec: () => dispatch({ type: "DECREMENT" }),
-    reset: () => dispatch({ type: "RESET" })
+    Increment: () => dispatch({ type: INCREMENT }),
+    dec: () => dispatch({ type: DECREMENT }),
+    reset: () => dispatch({ type: RESET })
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(EndGame);

@@ -1,3 +1,5 @@
+import { INCREMENT, DECREMENT, RESET } from "../actions/actionTypes";
+
 const initialState = {
   score: 0,
   time: 10,
@@ -6,17 +8,17 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case "INCREMENT":
+    case INCREMENT:
       return {
         ...state,
         score: state.score + 5
       };
-    case "DECREMENT":
+    case DECREMENT:
       return {
         ...state,
         time: state.time - 1
       };
-    case "RESET":
+    case RESET:
       return {
         ...state,
         score: 0,

@@ -5,10 +5,8 @@ import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 
 // Components
-import { createStore } from "redux";
-import reducer from "./reducer";
+import store from "./redux";
 
-const store = createStore(reducer);
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
