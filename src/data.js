@@ -1,4 +1,5 @@
-jokes = ["What do you call a blessed avocado? Holy guacamole.",
+jokes = [
+    "What do you call a blessed avocado? Holy guacamole.",
     "What do you say to an avocado who’s done a good job?“Bravocado!”",
     "What did the tortilla chip say to the guacamole? “You are all I avo wanted.”",
     "What did the avocado say to the fork? “You guac my world.”",
@@ -14,17 +15,22 @@ mama = ["god bless you Liala , الله يرظى عليكي",
     "انا رايحة عند جارتنا ام احمد",
     "مش طابخين اليوم :)",
     "pic1,pic2,pic3 اي صورة احلى احطها عالفيسبوم",
+    "whereisthespacebutton",
+    "who is tyler and what did he create ??",
+    "I love you Liala you are like a daughter to me .. ooh wait",
+    "when I was your age I made guacamole for the whole town in under 2 hours",
+    "https://www.youtube.com/watch?v=oHg5SJYRHA0"
 ]
 
 customers = [{
     name: "MishMish",
     order: 5,
-    comments: "do you have cookies?"
+    comments: "is your guacamole called Pikachu? Because it is shockingly delicious"
 },
 {
     name: "Azooz",
     order: 8,
-    comments: "My name is Azooz and I have the power of objects"
+    comments: "My name is Azooz and I have the power of objects by my side"
 },
 {
     name: "AUB",
@@ -34,13 +40,13 @@ customers = [{
 {
     name: "Anna",
     order: 9,
-    comments: "Craaaaaaazyy!!"
+    comments: " this is Craaaaaaazyy!! delicious"
 }
     ,
 {
     name: "San-deago",
     order: 11,
-    comments: "errrrr compurrrrr"
+    comments: "errrrr compurrrrr why there is no 'r' in guacamole"
 }
     ,
 {

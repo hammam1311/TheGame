@@ -11,26 +11,34 @@ const Home = () => {
         <img src={backstory}
           className="card-img-top border border-dark "
           alt="..."
-          style={{ width: "70rem", height: "35rem", marginTop: "40px" }} />
-        <div className="card-body ">
-          <h3 className="card-title">Guac-A-Mole</h3>
-          <h4 className="card-text">Make the Fastest and the most delicious guacamole!</h4>
-          <br></br>
-          <p className="card-text"><b className="text">What did the avocado say to the fork? “You guac my world.”</b></p>
-          <p className="card-text"><b className="text">What’s an avocado’s favorite kind of exercise? Avocardio!</b></p>
-          <Link to="/game">
-            <button
-              type="button"
-              class="btn btn-success rounded-pill btn-lg"
-              style={{ marginTop: "40px" }}
-            >
-              Start Game
+          style={{ width: "82rem", height: "39rem", marginTop: "10px" }} />
+
+        <center>
+          <div className=" card col-8 align-center border  "
+            style={{ background: "rgba(255, 255, 255, 0.71)" }}>
+
+
+            <h3 className="card-title"
+            >Guac-A-Mole</h3>
+            <h4 className="card-text">let me tell you about liala ..</h4>
+            <p className="card-text"><b className="text">Laila and her Mama lived alone in the "*aryeh" .. one day liala and her mom
+            desided to move to the city to start a tiny organic food buisness .
+          </b></p>
+            <p className="card-text"><b className="text">compony Liala and her Mama in this jerny and help her achive her dream </b></p>
+            <Link to="/game">
+              <button
+                type="button"
+                class="btn btn-success rounded-pill btn-lg"
+                style={{ marginTop: "40px" }}
+              >
+                Start Game
        </button>
-          </Link>
-          {mama}
-        </div>
+            </Link>
+            {mama}
+          </div>
+        </center>
       </div>
-    </div>
+    </div >
 
   );
 };
