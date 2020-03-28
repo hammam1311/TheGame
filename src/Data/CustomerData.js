@@ -4,7 +4,7 @@ const customers = [
     name: "MishMish",
     sex: "m",
     order: 5,
-    comments: "do you have cookies?"
+    comments: "is your guacamole called Pikachu? Because it is shockingly delicious"
   },
   {
     id: 2,
@@ -13,14 +13,26 @@ const customers = [
     order: 8,
     comments: "My name is Azooz and I have the power of objects"
   },
-  { id: 3, name: "AUB", sex: "m", order: 7, comments: "I hate Mansaf" },
-  { id: 4, name: "Anna", sex: "f", order: 9, comments: "Craaaaaaazyy!!" },
+  {
+    id: 3,
+    name: "AUB",
+    sex: "m",
+    order: 7,
+    comments: "I hate Mansaf"
+  },
+  {
+    id: 4,
+    name: "Anna",
+    sex: "f",
+    order: 9,
+    comments: " this is Craaaaaaazyy!! delicious"
+  },
   {
     id: 5,
     name: "San-deago",
     sex: "m",
     order: 11,
-    comments: "errrrr compurrrrr"
+    comments: "errrrr compurrrrr why there is no 'r' in guacamole"
   },
   {
     id: 6,

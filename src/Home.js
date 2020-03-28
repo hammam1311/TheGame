@@ -21,15 +21,15 @@ const Home = () => {
             <h3 className="card-title"
             >Guac-A-Mole</h3>
             <h4 className="card-text">let me tell you about liala ..</h4>
-            <p className="card-text"><b className="text">Laila and her Mama lived alone in the "*aryeh" .. one day liala and her mom
+            <p className="card-text"><b className="text">Laila and her Mama lived alone in a small town  .. one day Liala and her mama
             desided to move to the city to start a tiny organic food buisness .
           </b></p>
-            <p className="card-text"><b className="text">compony Liala and her Mama in this jerny and help her achive her dream </b></p>
+            <p className="card-text"><b className="text">Compony Liala and her Mama in this journey  and help her achive her dream </b></p>
             <Link to="/game">
               <button
                 type="button"
                 class="btn btn-success rounded-pill btn-lg"
-                style={{ marginTop: "40px" }}
+                style={{ marginTop: "10px" }}
               >
                 Start Game
        </button>

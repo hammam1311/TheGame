@@ -124,7 +124,7 @@ class Game extends Component {
 
                 <div
                   className="card text-white bg-white   mb-3"
-                  style={{ width: "70vh" }}
+                  style={{ width: "90 vh" }}
                 >
                   <div className="row align-center ">
                     {this.state.holes.map(holeID => (
@@ -137,14 +137,7 @@ class Game extends Component {
                   </div>
                 </div>
               </center>
-              <div className="row ">
-                {this.props.customers.map(customer => (
-                  <CustomerCard
-                    key={customer.id + customer.name}
-                    customer={customer}
-                  />
-                ))}
-              </div>
+
             </div>
           </div>
           <span className=" container-fluid  col-3">
@@ -175,7 +168,6 @@ const mapDispatchToProps = dispatch => {
     Increment: () => dispatch({ type: INCREMENT }),
     dec: () => dispatch({ type: DECREMENT }),
     reset: () => dispatch({ type: RESET }),
-    customers
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
