@@ -71,27 +71,36 @@ class Game extends Component {
             className=" card col-6 align-center border-bottom-0 border-dark "
             style={{ background: "rgba(255, 255, 255, 0.71)" }}
           >
-            <h1>Guac-A-Mole</h1>
-            <h4>
-              Time:
-              <span
-                style={{
-                  color: this.props.time > 10 ? "black" : "red"
-                }}
-              >
-                {this.props.time} seconds
-              </span>
-            </h4>
+            <div className="row">
+              <h4 className="text-center col" style={{ alignSelf: "center" }}>
+                Time:
+                <span
+                  style={{
+                    color: this.props.time > 10 ? "black" : "red"
+                  }}
+                >
+                  {this.props.time} seconds
+                </span>
+              </h4>
+              <h1 className="col" style={{ alignSelf: "left" }}>
+                Guac-A-Mol
+              </h1>
 
-            <h3 className="col-sm align-center text-center">
-              {this.props.score}
-              <img
-                src={coin}
-                className="card-img "
-                alt="..."
-                style={{ width: "2.5vh", height: "2.5vh", marginLeft: "5px" }}
-              />
-            </h3>
+              <h3 className="col-sm text-center">
+                {this.props.score}
+                <img
+                  src={coin}
+                  className="card-img "
+                  alt="..."
+                  style={{
+                    width: "2.5vh",
+                    height: "2.5vh",
+                    marginLeft: "5px",
+                    alignSelf: "center"
+                  }}
+                />
+              </h3>
+            </div>
 
             <div className="container-fluid align-center">
               <center>
@@ -206,6 +215,9 @@ class Game extends Component {
               ></i>
             </button>
           </span>
+          <button type="button" class="btn btn-success btn-lg btn-block">
+            <h2>Block level button</h2>
+          </button>
         </div>
       );
   }
