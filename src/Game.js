@@ -11,13 +11,19 @@ import shop from "./images/shop.png";
 import Mama from "./mama";
 import CustomerCard from "./customerCards";
 import customers from "./Data/CustomerData";
+import Shop from "./Shop"
+import MamaGift from "./MamaGift"
 let lastHole;
 
 class Game extends Component {
   state = {
+    score: this.props.score,
     holes: [0, 1, 2, 3, 4, 5],
-    counter: 0
-  };
+    counter: 0,
+
+  }
+
+
 
   componentDidMount() {
     this.usedHole = setInterval(() => {
@@ -27,6 +33,8 @@ class Game extends Component {
   componentWillUnmount() {
     clearInterval(this.usedHole);
   }
+
+
 
   randomHoles() {
     const index = Math.floor(Math.random() * this.state.holes.length);
@@ -65,6 +73,8 @@ class Game extends Component {
               style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
             />
             <Mama />
+            <MamaGift />
+
           </span>
 
           <div
@@ -120,11 +130,9 @@ class Game extends Component {
                               <b>menu :</b>
                             </h4>
                           </div>
-                          <h5 className="card-title">Dark card title</h5>
-                          <p className="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                          </p>
+                          <h5 className="card-text">
+                            guacamole : 5 $
+                          </h5>
                         </div>
                       </div>
                       <div className="col">
@@ -137,23 +145,22 @@ class Game extends Component {
                               <b>Current order:</b>
                             </h5>
                           </div>
-                          <h5 className="card-title">Dark card title</h5>
                           <p className="card-text">
                             {this.state.counter >= customers.length
                               ? `You are Done with the orders :D`
-                              : `name :
-                           ${this.props.customers[this.state.counter].name}
-                           
-                            order :
+                              : `*customer :
+                              ${this.props.customers[this.state.counter].name}
+
+                              *order :
                             ${
                               this.props.customers[this.state.counter].order
-                            } Guac-A-Mole
-                            
-                            comments:
+                              } Guac-A-Mole
+
+                            *comments:
                             ${
                               this.props.customers[this.state.counter].comments
-                            }`}
-                            <br />
+                              }`}
+
                           </p>
                         </div>
                       </div>
@@ -201,23 +208,12 @@ class Game extends Component {
               style={{ width: "50vh", height: "45vh", marginLeft: "-15px" }}
             />
             <br></br>
-            <button style={{ font_size: "24px" }}>
-              <i className="far fa-grin-tongue-squint"></i>
-            </button>
-            <button style={{ font_size: "24px" }}>
-              <i className="far fa-grin-tongue-squint"></i>
-            </button>
-            <button>
-              <i
-                className="em em-peach"
-                aria-role="presentation"
-                aria-label="PEACH"
-              ></i>
-            </button>
+
+            <Shop />
           </span>
-          <button type="button" class="btn btn-success btn-lg btn-block">
-            <h2>Block level button</h2>
-          </button>
+
+
+
         </div>
       );
   }

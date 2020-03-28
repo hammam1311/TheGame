@@ -30,12 +30,12 @@ class Circle extends Component {
               this.state.pressed
                 ? Guacamole
                 : this.props.usedHole === 1
-                ? Avocado
-                : Empty
+                  ? Avocado
+                  : Empty
             }
             alt="Logo"
-            width="100vh"
-            height="100vh"
+            width="185vh"
+            height="185vh"
             onClick={this.handleClick}
           />
         </div>
