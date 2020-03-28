@@ -10,93 +10,103 @@ const ShopUpgradeCosts = [5, 250, 500, 1000, 2000];
 
 class Shop extends Component {
   state = {
-    upgrades: {
-      Apples: false,
-      Banana: false,
-      WaterMelon: false,
-      Pineapple: false,
-      peach: false
-    }
-  };
-  componentDidMount() {}
+    Apples: false,
+    Banana: false,
+    WaterMelon: false,
+    Pineapple: false,
+    peach: false
 
-  buyApples() {
+  };
+
+
+
+  buyApples(props) {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[0]) {
       alert("Not enough Coins!");
-    } else if (!this.state.upgrades.Apples && points >= ShopUpgradeCosts[0]) {
+    } else if (!this.state.Apples && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[0]);
-      let upgrade = this.state.upgrades.Apples;
+      let upgrade = this.state.Apples;
       upgrade = true;
+      let state = this.state
       this.setState({
-        ...this.state.upgrades,
+        ...state,
         Apples: upgrade
       });
+
     }
   }
 
-  buyBanana = () => {
+  buyBanana(props) {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[1]) {
       alert("Not enough Coins!");
-    } else if (!this.state.upgrades.Banana && points >= ShopUpgradeCosts[1]) {
-      let upgrades = this.state.upgrades;
-      upgrades.Banana = true;
+    } else if (!this.state.Banana && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[1]);
+      let upgrade = this.state.Banana;
+      upgrade = true;
+      let state = this.state
       this.setState({
-        upgrades: this.state.upgrades
+        ...state,
+        Banana: upgrade
       });
-    }
-  };
 
-  buyWaterMelon = () => {
+    }
+  }
+
+  buyWaterMelon(props) {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[2]) {
       alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.WaterMelon &&
-      points >= ShopUpgradeCosts[2]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.WaterMelon = true;
+    } else if (!this.state.WaterMelon && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[2]);
+      let upgrade = this.state.WaterMelon;
+      upgrade = true;
+      let state = this.state
       this.setState({
-        upgrades: upgrades
+        ...state,
+        WaterMelon: upgrade
       });
-    }
-  };
 
-  buyPineapple = () => {
+    }
+  }
+  buyPineapple(props) {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[3]) {
       alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.Pineapple &&
-      points >= ShopUpgradeCosts[3]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.Pineapple = true;
+    } else if (!this.state.Pineapple && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[3]);
+      let upgrade = this.state.Pineapple;
+      upgrade = true;
+      let state = this.state
       this.setState({
-        upgrades: upgrades
+        ...state,
+        Pineapple: upgrade
       });
-    }
-  };
 
-  buypeach = () => {
+    }
+  }
+
+  buypeach(props) {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[4]) {
       alert("Not enough Coins!");
-    } else if (!this.state.upgrades.peach && points >= ShopUpgradeCosts[4]) {
-      let upgrades = this.state.upgrades;
-      upgrades.peach = true;
+    } else if (!this.state.peach && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[4]);
+      let upgrade = this.state.peach;
+      upgrade = true;
+      let state = this.state
       this.setState({
-        upgrades: upgrades
+        ...state,
+        peach: upgrade
       });
+
     }
-  };
+  }
   render() {
+    const renderer = () => {
+
+    }
     return (
       <div>
         <div className="card">
@@ -117,25 +127,17 @@ class Shop extends Component {
                     }}
                   />
                   Mounthly apples supply
-                  {this.state.upgrades.Apples ? (
-                    <button
-                      type="button"
-                      className="btn btn-info "
-                      style={{ marginTop: "5px", marginLeft: "7px" }}
-                      onClick={() => this.buyApples()}
-                    >
-                      buy {ShopUpgradeCosts[0]} $
-                    </button>
-                  ) : (
-                    <button
-                      type="button"
-                      className="btn btn-info "
-                      style={{ marginTop: "5px", marginLeft: "7px" }}
-                      onClick={() => this.buyApples()}
-                    >
-                      buy {ShopUpgradeCosts[0]} $
-                    </button>
-                  )}
+                  {!this.state.Apples ? <button
+                    type="button"
+                    className="btn btn-info"
+                    style={{ marginTop: "5px", marginLeft: "7px", }}
+                    onClick={() => this.buyApples(this.props)}
+                  >
+                    buy {ShopUpgradeCosts[0]} $
+          </button>
+                    : <br></br>
+                  }
+
                 </li>
 
                 <li className="list-group-item">
@@ -151,14 +153,16 @@ class Shop extends Component {
                     }}
                   />
                   Mounthly Banana supply
-                  <button
+                  {!this.state.Banana ? <button
                     type="button"
                     className="btn btn-info"
-                    style={{ marginTop: "5px", marginLeft: "7px" }}
-                    onClick={() => this.buyBanana()}
+                    style={{ marginTop: "5px", marginLeft: "7px", }}
+                    onClick={() => this.buyBanana(this.props)}
                   >
-                    buy {ShopUpgradeCosts[1]} ${" "}
-                  </button>
+                    buy {ShopUpgradeCosts[1]} $
+          </button>
+                    : <br></br>
+                  }
                 </li>
 
                 <li className="list-group-item">
@@ -174,14 +178,16 @@ class Shop extends Component {
                     }}
                   />
                   Mounthly Watermelon supply
-                  <button
+                  {!this.state.WaterMelon ? <button
                     type="button"
                     className="btn btn-info"
-                    style={{ marginTop: "5px", marginLeft: "7px" }}
-                    onClick={() => this.buyWaterMelon()}
+                    style={{ marginTop: "5px", marginLeft: "7px", }}
+                    onClick={() => this.buyWaterMelon(this.props)}
                   >
                     buy {ShopUpgradeCosts[2]} $
-                  </button>
+          </button>
+                    : <br></br>
+                  }
                 </li>
 
                 <li className="list-group-item">
@@ -197,14 +203,16 @@ class Shop extends Component {
                     }}
                   />
                   Mounthly pineapple supply
-                  <button
+                  {!this.state.Pineapple ? <button
                     type="button"
                     className="btn btn-info"
-                    style={{ marginTop: "5px", marginLeft: "7px" }}
-                    onClick={() => this.buyPineapple()}
+                    style={{ marginTop: "5px", marginLeft: "7px", }}
+                    onClick={() => this.buyPineapple(this.props)}
                   >
                     buy {ShopUpgradeCosts[3]} $
-                  </button>
+          </button>
+                    : <br></br>
+                  }
                 </li>
                 <li className="list-group-item">
                   <img
@@ -219,14 +227,16 @@ class Shop extends Component {
                     }}
                   />
                   Mounthly peach supply
-                  <button
+                  {!this.state.peach ? <button
                     type="button"
                     className="btn btn-info"
-                    style={{ marginTop: "5px", marginLeft: "7px" }}
-                    onClick={() => this.buypeach()}
+                    style={{ marginTop: "5px", marginLeft: "7px", }}
+                    onClick={() => this.buypeach(this.props)}
                   >
                     buy {ShopUpgradeCosts[4]} $
-                  </button>
+          </button>
+                    : <br></br>
+                  }
                 </li>
               </center>
             </ul>
