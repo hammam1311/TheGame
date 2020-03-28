@@ -7,10 +7,8 @@ import coin from "./images/coin.png";
 import Laila from "./images/Laila.png";
 import mama from "./images/mama.png";
 import mama_mad from "./images/mama_mad.png";
-
 import shop from "./images/shop.png";
 import Mama from "./mama";
-
 let lastHole;
 
 class Game extends Component {
@@ -133,18 +131,27 @@ class Game extends Component {
                       <Circle
                         usedHole={this.randomHoles(this.state.holes)}
                         score={() => this.IncreaseScore}
+                        key={this.state.holes.index + "/"}
                       />
                     ))}
                   </div>
                 </div>
               </center>
+              <div className="row ">
+                {this.props.customers.map(customer => (
+                  <CustomerCard
+                    key={customer.id + customer.name}
+                    customer={customer}
+                  />
+                ))}
+              </div>
             </div>
           </div>
           <span className=" container-fluid  col-3">
             <br></br>
             <img
               src={shop}
-              className="card-img-fluid "
+              className="card-img-fluid  "
               alt="..."
               style={{ width: "50vh", height: "45vh", marginLeft: "-15px" }}
 
@@ -167,7 +174,8 @@ const mapDispatchToProps = dispatch => {
   return {
     Increment: () => dispatch({ type: INCREMENT }),
     dec: () => dispatch({ type: DECREMENT }),
-    reset: () => dispatch({ type: RESET })
+    reset: () => dispatch({ type: RESET }),
+    customers
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);
