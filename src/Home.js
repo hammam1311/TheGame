@@ -34,7 +34,6 @@ const Home = () => {
                 Start Game
        </button>
             </Link>
-            {mama}
           </div>
         </center>
       </div>
