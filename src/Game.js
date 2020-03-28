@@ -73,7 +73,7 @@ class Game extends Component {
         <div className=" container-fluid text-center row  2vh">
           <span className=" container-fluid  col-3">
             <br></br>
-            0
+            {this.props.heart}
             <img
               src={heart}
               className="card-img "
@@ -224,7 +224,8 @@ class Game extends Component {
 const mapStateToProps = state => {
   return {
     score: state.operationsState.score,
-    time: state.operationsState.time
+    time: state.operationsState.time,
+    heart: state.operationsState.heart
   };
 };
 

@@ -26,14 +26,14 @@ const Home = () => {
             <p className="card-text">
               <b className="text">
                 Laila and her Mama lived alone in a small town .. one day Liala
-                and her mama desided to move to the city to start a tiny organic
+                and her mama decided to move to the city to start a tiny organic
                 food buisness .
               </b>
             </p>
             <p className="card-text">
               <b className="text">
-                Compony Liala and her Mama in this journey and help her achive
-                her dream{" "}
+                Join Liala and her Mama in this journey and help her achive her
+                dream{" "}
               </b>
             </p>
             <Link to="/game">

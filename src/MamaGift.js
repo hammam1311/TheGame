@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { decrementScore, incrementHeart } from "./redux/actions";
 import Fawaz from "./images/Fawaz.png";
 import flower from "./images/flower.png";
 import car from "./images/car.png";
 import pet from "./images/pet.png";
 import ring from "./images/ring.png";
-import { decrementScore } from "./redux/actions";
+import heart from "./images/heart.png";
 
 const ShopForGifts = [25, 175, 1800, 3750, 9999];
+const HeartPlus = [5, 35, 360, 750, 2000];
 
 class MamaGift extends Component {
   state = {
@@ -29,6 +31,7 @@ class MamaGift extends Component {
       let gifts = this.state.gifts;
       gifts.flower = true;
       this.props.pay(ShopForGifts[0]);
+      this.props.HeartInc(ShopForGifts[0]);
       this.setState({
         gifts: gifts
       });
@@ -44,6 +47,7 @@ class MamaGift extends Component {
       let gifts = this.state.gifts;
       gifts.ring = true;
       this.props.pay(ShopForGifts[1]);
+      this.props.HeartInc(ShopForGifts[1]);
 
       this.setState({
         gifts: gifts
@@ -59,6 +63,7 @@ class MamaGift extends Component {
       let gifts = this.state.gifts;
       gifts.car = true;
       this.props.pay(ShopForGifts[2]);
+      this.props.HeartInc(ShopForGifts[2]);
 
       this.setState({
         gifts: gifts
@@ -74,6 +79,7 @@ class MamaGift extends Component {
       let gifts = this.state.gifts;
       gifts.giraffe = true;
       this.props.pay(ShopForGifts[3]);
+      this.props.HeartInc(ShopForGifts[3]);
 
       this.setState({
         gifts: gifts
@@ -89,6 +95,7 @@ class MamaGift extends Component {
       let gifts = this.state.gifts;
       gifts.alien = true;
       this.props.pay(ShopForGifts[4]);
+      this.props.HeartInc(ShopForGifts[4]);
 
       this.setState({
         gifts: gifts
@@ -126,6 +133,18 @@ class MamaGift extends Component {
                   >
                     buy {ShopForGifts[0]} $
                   </button>
+                  <img
+                    src={heart}
+                    className="card-img "
+                    alt="..."
+                    style={{
+                      width: "3vh",
+                      height: "3vh",
+                      marginLeft: "15px",
+                      alignSelf: "right"
+                    }}
+                  />
+                  {HeartPlus[0]}
                 </li>
 
                 <li className="list-group-item">
@@ -149,6 +168,18 @@ class MamaGift extends Component {
                   >
                     buy {ShopForGifts[1]} $
                   </button>
+                  <img
+                    src={heart}
+                    className="card-img "
+                    alt="..."
+                    style={{
+                      width: "3vh",
+                      height: "3vh",
+                      marginLeft: "15px",
+                      alignSelf: "right"
+                    }}
+                  />
+                  {HeartPlus[1]}
                 </li>
 
                 <li className="list-group-item">
@@ -172,6 +203,18 @@ class MamaGift extends Component {
                   >
                     buy {ShopForGifts[2]} ${" "}
                   </button>
+                  <img
+                    src={heart}
+                    className="card-img "
+                    alt="..."
+                    style={{
+                      width: "3vh",
+                      height: "3vh",
+                      marginLeft: "15px",
+                      alignSelf: "right"
+                    }}
+                  />
+                  {HeartPlus[2]}
                 </li>
 
                 <li className="list-group-item">
@@ -195,6 +238,18 @@ class MamaGift extends Component {
                   >
                     buy {ShopForGifts[3]} $
                   </button>
+                  <img
+                    src={heart}
+                    className="card-img "
+                    alt="..."
+                    style={{
+                      width: "3vh",
+                      height: "3vh",
+                      marginLeft: "15px",
+                      alignSelf: "right"
+                    }}
+                  />
+                  {HeartPlus[3]}
                 </li>
                 <li className="list-group-item">
                   <img
@@ -217,6 +272,18 @@ class MamaGift extends Component {
                   >
                     buy {ShopForGifts[4]} $
                   </button>
+                  <img
+                    src={heart}
+                    className="card-img "
+                    alt="..."
+                    style={{
+                      width: "3vh",
+                      height: "3vh",
+                      marginLeft: "15px",
+                      alignSelf: "right"
+                    }}
+                  />
+                  {HeartPlus[4]}
                 </li>
               </center>
             </ul>
@@ -228,13 +295,15 @@ class MamaGift extends Component {
 }
 const mapStateToProps = state => {
   return {
-    score: state.operationsState.score
+    score: state.operationsState.score,
+    heart: state.operationsState.heart
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    pay: payCost => dispatch(decrementScore(payCost))
+    pay: payCost => dispatch(decrementScore(payCost)),
+    HeartInc: HeartInc => dispatch(incrementHeart(HeartInc))
   };
 };
 

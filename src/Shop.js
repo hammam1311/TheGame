@@ -5,7 +5,9 @@ import wmShop from "./images/wmShop.png";
 import peachShop from "./images/peachShop.png";
 import pnShop from "./images/pnShop.png";
 import { connect } from "react-redux";
-import { decrementScore } from "./redux/actions";
+import { INCREMENT_MENU } from "./redux/actions/actionTypes";
+
+import { decrementScore, IncMenu } from "./redux/actions";
 const ShopUpgradeCosts = [5, 250, 500, 1000, 2000];
 
 class Shop extends Component {
@@ -18,7 +20,6 @@ class Shop extends Component {
       peach: false
     }
   };
-  componentDidMount() {}
 
   buyApples() {
     let points = this.props.score;
@@ -26,6 +27,7 @@ class Shop extends Component {
       alert("Not enough Coins!");
     } else if (!this.state.upgrades.Apples && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[0]);
+      this.props.IncMenu();
       let upgrade = this.state.upgrades.Apples;
       upgrade = true;
       this.setState({
@@ -244,7 +246,8 @@ const mapStateToProps = state => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    pay: payCost => dispatch(decrementScore(payCost))
+    pay: payCost => dispatch(decrementScore(payCost)),
+    IncMenu: () => dispatch({ type: INCREMENT_MENU })
   };
 };
 

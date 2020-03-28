@@ -2,3 +2,5 @@ export const INCREMENT = "INCREMENT";
 export const DECREMENT = "DECREMENT";
 export const RESET = "RESET";
 export const DECREMENTSCORE = "DECREMENTSCORE";
+export const INCREMENTHEART = "INCREMENTHEART";
+export const INCREMENT_MENU = "INCREMENT_MENU";

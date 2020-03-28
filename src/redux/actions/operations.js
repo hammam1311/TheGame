@@ -1,4 +1,11 @@
-import { INCREMENT, DECREMENT, RESET, DECREMENTSCORE } from "./actionTypes";
+import {
+  INCREMENT,
+  DECREMENT,
+  RESET,
+  DECREMENTSCORE,
+  INCREMENTHEART,
+  INCREMENT_MENU
+} from "./actionTypes";
 
 //Increment The score
 export const increment = () => {
@@ -26,5 +33,20 @@ export const decrementScore = payCost => {
   return {
     type: DECREMENTSCORE,
     payload: payCost
+  };
+};
+
+//Heart
+export const incrementHeart = HeartInc => {
+  return {
+    type: INCREMENTHEART,
+    payload: HeartInc
+  };
+};
+
+//Increment The Menu
+export const IncMenu = () => {
+  return {
+    type: INCREMENT_MENU
   };
 };
