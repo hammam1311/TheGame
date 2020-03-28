@@ -24,7 +24,7 @@ class Circle extends Component {
   render() {
     return (
       <div>
-        <div className="mt-5 ml-4 col-3 align-center ">
+        <div className="mt-5 ml-2 col-3  ">
           <img
             src={
               this.state.pressed

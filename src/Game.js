@@ -15,7 +15,7 @@ let lastHole;
 
 class Game extends Component {
   state = {
-    holes: [0, 1, 2, 3, 4]
+    holes: [0, 1, 2, 3, 4, 5]
   };
 
   componentDidMount() {
@@ -26,10 +26,6 @@ class Game extends Component {
   componentWillUnmount() {
     clearInterval(this.usedHole);
   }
-  IncreaseScore = () => {
-    let newScore = this.state.score + 5;
-    this.setState({ score: newScore });
-  }; //End of the Inc function
 
   randomHoles() {
     const index = Math.floor(Math.random() * this.state.holes.length);
@@ -102,16 +98,12 @@ class Game extends Component {
                 >
                   <div className="row align-center ">
                     {this.state.holes.map(holeID => (
-                      <Circle
-                        usedHole={this.randomHoles(this.state.holes)}
-                        score={() => this.IncreaseScore}
-                        key={this.state.holes.index + "/"}
-                      />
+                      <Circle usedHole={this.randomHoles(this.state.holes)} />
                     ))}
                   </div>
                 </div>
               </center>
-              <div className="row ">
+              <div className=" container-fluid ">
                 {this.props.customers.map(customer => (
                   <CustomerCard
                     key={customer.id + customer.name}
@@ -127,7 +119,7 @@ class Game extends Component {
               src={shop}
               className="card-img-fluid  "
               alt="..."
-              style={{ width: "50vh", height: "45vh", marginLeft: "-10px" }}
+              style={{ width: "50vh", height: "45vh", marginLeft: "-15px" }}
             />
             <br></br>
           </span>
