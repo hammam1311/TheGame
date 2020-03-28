@@ -1,4 +1,9 @@
-import { INCREMENT, DECREMENT, RESET } from "../actions/actionTypes";
+import {
+  INCREMENT,
+  DECREMENT,
+  RESET,
+  DECREMENTSCORE
+} from "../actions/actionTypes";
 
 const initialState = {
   score: 0,
@@ -25,6 +30,12 @@ const reducer = (state = initialState, action) => {
         time: 1000,
         reset: true
       };
+    case DECREMENTSCORE:
+      return {
+        ...state,
+        score: state.score - action.payload
+      };
+
     default:
       return state;
   }

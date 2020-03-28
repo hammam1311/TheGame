@@ -6,11 +6,11 @@ import EndGame from "./EndGame";
 import coin from "./images/coin.png";
 import Laila from "./images/Laila.png";
 import mama from "./images/mama.png";
-import mama_mad from "./images/mama_mad.png";
 import shop from "./images/shop.png";
 import Mama from "./mama";
 import customers from "./Data/CustomerData";
 import Shop from "./Shop";
+
 import MamaGift from "./MamaGift";
 let lastHole;
 
@@ -41,89 +41,6 @@ class Game extends Component {
 
     return hole;
   } //End of the randomHoles function
-
-  buyAppels() {
-    let points = this.state.score;
-    if (points < this.state.ShopUpgradeCosts[0]) {
-      alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.Appels &&
-      points >= this.state.ShopUpgradeCosts[0]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.Apples = true;
-      this.setState({
-        upgrades: upgrades,
-        storePoints: this.props.score - this.state.ShopUpgradeCosts[0]
-      });
-    }
-  }
-
-  buyBanana() {
-    let points = this.state.score;
-    if (points < this.state.ShopUpgradeCosts[1]) {
-      alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.Banana &&
-      points >= this.state.ShopUpgradeCosts[1]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.Banana = true;
-      this.setState({
-        upgrades: upgrades,
-        storePoints: this.props.score - this.state.ShopUpgradeCosts[1]
-      });
-    }
-  }
-
-  buyWaterMelon() {
-    let points = this.state.score;
-    if (points < this.state.ShopUpgradeCosts[2]) {
-      alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.WaterMelon &&
-      points >= this.state.ShopUpgradeCosts[2]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.WaterMelon = true;
-      this.setState({
-        upgrades: upgrades,
-        storePoints: this.props.score - this.state.ShopUpgradeCosts[2]
-      });
-    }
-  }
-  buyPineapple() {
-    let points = this.state.score;
-    if (points < this.state.ShopUpgradeCosts[3]) {
-      alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.Pineapple &&
-      points >= this.state.ShopUpgradeCosts[3]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.Pineapple = true;
-      this.setState({
-        upgrades: upgrades,
-        score: this.props.score - this.state.ShopUpgradeCosts[3]
-      });
-    }
-  }
-  buypeach() {
-    let points = this.state.score;
-    if (points < this.state.ShopUpgradeCosts[4]) {
-      alert("Not enough Coins!");
-    } else if (
-      !this.state.upgrades.peach &&
-      points >= this.state.ShopUpgradeCosts[4]
-    ) {
-      let upgrades = this.state.upgrades;
-      upgrades.peach = true;
-      this.setState({
-        upgrades: upgrades,
-        storePoints: this.props.score - this.state.ShopUpgradeCosts[4]
-      });
-    }
-  }
 
   render() {
     let CustomerScore = this.props.customers[this.state.counter];

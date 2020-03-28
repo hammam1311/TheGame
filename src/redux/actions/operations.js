@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from "./actionTypes";
+import { INCREMENT, DECREMENT, RESET, DECREMENTSCORE } from "./actionTypes";
 
 //Increment The score
 export const increment = () => {
@@ -18,5 +18,13 @@ export const decrement = () => {
 export const reset = () => {
   return {
     type: RESET
+  };
+};
+
+//pay
+export const decrementScore = payCost => {
+  return {
+    type: DECREMENTSCORE,
+    payload: payCost
   };
 };

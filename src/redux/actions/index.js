@@ -1,1 +1,1 @@
-export { increment, decrement, reset } from "./operations";
+export { increment, decrement, reset, decrementScore } from "./operations";
