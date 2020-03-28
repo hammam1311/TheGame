@@ -9,14 +9,22 @@ import mama from "./images/mama.png";
 import mama_mad from "./images/mama_mad.png";
 import shop from "./images/shop.png";
 import Mama from "./mama";
-import CustomerCard from "./customerCards";
 import customers from "./Data/CustomerData";
 let lastHole;
 
 class Game extends Component {
   state = {
+    score: this.props.score,
     holes: [0, 1, 2, 3, 4, 5],
-    counter: 0
+    counter: 0,
+    ShopUpgradeCosts: [100, 250, 500, 1000, 2000],
+    upgrades: {
+      Appels: false,
+      Banana: false,
+      WaterMelon: false,
+      Pineapple: false,
+      peach: false
+    }
   };
 
   componentDidMount() {
@@ -40,9 +48,92 @@ class Game extends Component {
     return hole;
   } //End of the randomHoles function
 
+  buyAppels() {
+    let points = this.state.score;
+    if (points < this.state.ShopUpgradeCosts[0]) {
+      alert("Not enough Coins!");
+    } else if (
+      !this.state.upgrades.Appels &&
+      points >= this.state.ShopUpgradeCosts[0]
+    ) {
+      let upgrades = this.state.upgrades;
+      upgrades.Apples = true;
+      this.setState({
+        upgrades: upgrades,
+        storePoints: this.props.score - this.state.ShopUpgradeCosts[0]
+      });
+    }
+  }
+
+  buyBanana() {
+    let points = this.state.score;
+    if (points < this.state.ShopUpgradeCosts[1]) {
+      alert("Not enough Coins!");
+    } else if (
+      !this.state.upgrades.Banana &&
+      points >= this.state.ShopUpgradeCosts[1]
+    ) {
+      let upgrades = this.state.upgrades;
+      upgrades.Banana = true;
+      this.setState({
+        upgrades: upgrades,
+        storePoints: this.props.score - this.state.ShopUpgradeCosts[1]
+      });
+    }
+  }
+
+  buyWaterMelon() {
+    let points = this.state.score;
+    if (points < this.state.ShopUpgradeCosts[2]) {
+      alert("Not enough Coins!");
+    } else if (
+      !this.state.upgrades.WaterMelon &&
+      points >= this.state.ShopUpgradeCosts[2]
+    ) {
+      let upgrades = this.state.upgrades;
+      upgrades.WaterMelon = true;
+      this.setState({
+        upgrades: upgrades,
+        storePoints: this.props.score - this.state.ShopUpgradeCosts[2]
+      });
+    }
+  }
+  buyPineapple() {
+    let points = this.state.score;
+    if (points < this.state.ShopUpgradeCosts[3]) {
+      alert("Not enough Coins!");
+    } else if (
+      !this.state.upgrades.Pineapple &&
+      points >= this.state.ShopUpgradeCosts[3]
+    ) {
+      let upgrades = this.state.upgrades;
+      upgrades.Pineapple = true;
+      this.setState({
+        upgrades: upgrades,
+        score: this.props.score - this.state.ShopUpgradeCosts[3]
+      });
+    }
+  }
+  buypeach() {
+    let points = this.state.score;
+    if (points < this.state.ShopUpgradeCosts[4]) {
+      alert("Not enough Coins!");
+    } else if (
+      !this.state.upgrades.peach &&
+      points >= this.state.ShopUpgradeCosts[4]
+    ) {
+      let upgrades = this.state.upgrades;
+      upgrades.peach = true;
+      this.setState({
+        upgrades: upgrades,
+        storePoints: this.props.score - this.state.ShopUpgradeCosts[4]
+      });
+    }
+  }
+
   render() {
     let CustomerScore = this.props.customers[this.state.counter];
-    if (this.state.counter >= customers.length) {
+    if (this.state.counter === customers.length) {
       return <EndGame />;
     } else {
       this.props.score >= CustomerScore.order * 5
@@ -56,7 +147,7 @@ class Game extends Component {
       return (
         <div className=" container-fluid text-center row  2vh">
           <span className=" container-fluid  col-3">
-            <br></br>
+            <br />
 
             <img
               src={mama}
@@ -137,7 +228,6 @@ class Game extends Component {
                               <b>Current order:</b>
                             </h5>
                           </div>
-                          <h5 className="card-title">Dark card title</h5>
                           <p className="card-text">
                             {this.state.counter >= customers.length
                               ? `You are Done with the orders :D`
@@ -182,14 +272,6 @@ class Game extends Component {
                   </div>
                 </div>
               </center>
-              <div className=" container-fluid ">
-                {this.props.customers.map(customer => (
-                  <CustomerCard
-                    key={customer.id + customer.name}
-                    customer={customer}
-                  />
-                ))}
-              </div>
             </div>
           </div>
           <span className=" container-fluid  col-3">
@@ -202,20 +284,16 @@ class Game extends Component {
             />
             <br></br>
             <button style={{ font_size: "24px" }}>
-              <i className="far fa-grin-tongue-squint"></i>
+              <i className="far fa-grin-tongue-squint" aria-label="PEACH"></i>
             </button>
             <button style={{ font_size: "24px" }}>
-              <i className="far fa-grin-tongue-squint"></i>
+              <i className="far fa-grin-tongue-squint" aria-label="PEACH"></i>
             </button>
             <button>
-              <i
-                className="em em-peach"
-                aria-role="presentation"
-                aria-label="PEACH"
-              ></i>
+              <i className="em em-peach" aria-label="PEACH"></i>
             </button>
           </span>
-          <button type="button" class="btn btn-success btn-lg btn-block">
+          <button type="button" className="btn btn-success btn-lg btn-block">
             <h2>Block level button</h2>
           </button>
         </div>

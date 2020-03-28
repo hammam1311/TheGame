@@ -24,7 +24,7 @@ class Circle extends Component {
   render() {
     return (
       <div>
-        <div className="mt-5 ml-3 col-3  ">
+        <div className="mt-5 ml-3 col-4 ">
           <img
             src={
               this.state.pressed
@@ -34,8 +34,8 @@ class Circle extends Component {
                 : Empty
             }
             alt="Logo"
-            width="100vh"
-            height="100vh"
+            width="110vh"
+            height="110vh"
             onClick={this.handleClick}
           />
         </div>

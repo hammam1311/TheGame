@@ -11,7 +11,7 @@ class Mama extends Component {
 
   render() {
     // We are taking the score each time it increse
-    console.log(this.props.score);
+    console.log(mama.length);
     {
       this.state.counter >= mama.length
         ? this.setState({ counter: 10 })

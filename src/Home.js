@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import mama from "./mama";
 import backstory from "./images/backstory.jpg";
 
 const Home = () => {
