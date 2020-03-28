@@ -10,21 +10,15 @@ import mama_mad from "./images/mama_mad.png";
 import shop from "./images/shop.png";
 import Mama from "./mama";
 import customers from "./Data/CustomerData";
+import Shop from "./Shop";
+import MamaGift from "./MamaGift";
 let lastHole;
 
 class Game extends Component {
   state = {
     score: this.props.score,
     holes: [0, 1, 2, 3, 4, 5],
-    counter: 0,
-    ShopUpgradeCosts: [100, 250, 500, 1000, 2000],
-    upgrades: {
-      Appels: false,
-      Banana: false,
-      WaterMelon: false,
-      Pineapple: false,
-      peach: false
-    }
+    counter: 0
   };
 
   componentDidMount() {
@@ -156,6 +150,7 @@ class Game extends Component {
               style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
             />
             <Mama />
+            <MamaGift />
           </span>
 
           <div
@@ -211,11 +206,7 @@ class Game extends Component {
                               <b>menu :</b>
                             </h4>
                           </div>
-                          <h5 className="card-title">Dark card title</h5>
-                          <p className="card-text">
-                            Some quick example text to build on the card title
-                            and make up the bulk of the card's content.
-                          </p>
+                          <h5 className="card-text">guacamole : 5 $</h5>
                         </div>
                       </div>
                       <div className="col">
@@ -231,19 +222,18 @@ class Game extends Component {
                           <p className="card-text">
                             {this.state.counter >= customers.length
                               ? `You are Done with the orders :D`
-                              : `name :
-                           ${this.props.customers[this.state.counter].name}
-                           
-                            order :
+                              : `*customer :
+                              ${this.props.customers[this.state.counter].name}
+
+                              *order :
                             ${
                               this.props.customers[this.state.counter].order
                             } Guac-A-Mole
-                            
-                            comments:
+
+                            *comments:
                             ${
                               this.props.customers[this.state.counter].comments
                             }`}
-                            <br />
                           </p>
                         </div>
                       </div>
@@ -283,19 +273,9 @@ class Game extends Component {
               style={{ width: "50vh", height: "45vh", marginLeft: "-15px" }}
             />
             <br></br>
-            <button style={{ font_size: "24px" }}>
-              <i className="far fa-grin-tongue-squint" aria-label="PEACH"></i>
-            </button>
-            <button style={{ font_size: "24px" }}>
-              <i className="far fa-grin-tongue-squint" aria-label="PEACH"></i>
-            </button>
-            <button>
-              <i className="em em-peach" aria-label="PEACH"></i>
-            </button>
+
+            <Shop />
           </span>
-          <button type="button" className="btn btn-success btn-lg btn-block">
-            <h2>Block level button</h2>
-          </button>
         </div>
       );
   }

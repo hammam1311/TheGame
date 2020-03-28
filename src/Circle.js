@@ -34,8 +34,8 @@ class Circle extends Component {
                 : Empty
             }
             alt="Logo"
-            width="110vh"
-            height="110vh"
+            width="185vh"
+            height="185vh"
             onClick={this.handleClick}
           />
         </div>
