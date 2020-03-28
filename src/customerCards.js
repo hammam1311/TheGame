@@ -4,7 +4,8 @@ import Favatar from "./images/img_avatar6.png";
 
 const CustomerCard = ({ customer }) => (
   <div
-    className=" card container-fluid row  "
+    className=" card container-fluid row   "
+    hidden
     style={{ width: "50%", height: "30%" }}
   >
     <div>

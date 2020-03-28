@@ -4,6 +4,7 @@ import "./App.css";
 
 import Home from "./Home";
 import Game from "./Game";
+import Test from "./test";
 import bg from "./images/bg.jpg";
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
       <div style={{ backgroundImage: `url(${bg})` }} className="text-cent">
         <Switch>
           <Route exact path="/game" component={Game} />
+          <Route exact path="/test" component={Test} />
+
           <Route exact path="/" component={Home} />
         </Switch>
       </div>

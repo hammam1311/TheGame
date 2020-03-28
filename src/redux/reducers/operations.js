@@ -2,7 +2,7 @@ import { INCREMENT, DECREMENT, RESET } from "../actions/actionTypes";
 
 const initialState = {
   score: 0,
-  time: 10000,
+  time: 1000,
   reset: false
 };
 
@@ -22,7 +22,7 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         score: 0,
-        time: 10,
+        time: 1000,
         reset: true
       };
     default:

@@ -5,7 +5,7 @@ const jokes = [
   "What did the avocado say to the fork? “You guac my world.”",
   "What’s an avocado’s favorite kind of exercise? Avocardio!",
   "Avocado makers need to up their game The only free gift I get is a wooden ball",
-  "What does a duck thats made of avocado say? Guac"
-];
+  "What does a duck thats made of avocado say? Guac",
+]
 
 export default jokes;

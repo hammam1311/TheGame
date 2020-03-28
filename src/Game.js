@@ -3,19 +3,20 @@ import { connect } from "react-redux";
 import { INCREMENT, DECREMENT, RESET } from "./redux/actions/actionTypes";
 import Circle from "./Circle";
 import EndGame from "./EndGame";
-import coin from "./images/coin.jpg";
+import coin from "./images/coin.png";
 import Laila from "./images/Laila.png";
 import mama from "./images/mama.png";
 import mama_mad from "./images/mama_mad.png";
 import shop from "./images/shop.png";
 import Mama from "./mama";
-import customers from "./Data/CustomerData";
 import CustomerCard from "./customerCards";
+import customers from "./Data/CustomerData";
 let lastHole;
 
 class Game extends Component {
   state = {
-    holes: [0, 1, 2, 3, 4, 5]
+    holes: [0, 1, 2, 3, 4, 5],
+    counter: 0
   };
 
   componentDidMount() {
@@ -40,12 +41,21 @@ class Game extends Component {
   } //End of the randomHoles function
 
   render() {
+    let CustomerScore = this.props.customers[this.state.counter];
+    if (this.state.counter >= customers.length) {
+      return <EndGame />;
+    } else {
+      this.props.score >= CustomerScore.order * 5
+        ? (this.state.counter += 1)
+        : (this.state.counter = this.state.counter);
+    }
+
     if (this.props.time <= 0) {
       return <EndGame />;
     } else
       return (
         <div className=" container-fluid text-center row  2vh">
-          <span className=" container-fluid border border-dark col-3">
+          <span className=" container-fluid  col-3">
             <br></br>
 
             <img
@@ -58,7 +68,7 @@ class Game extends Component {
           </span>
 
           <div
-            className=" card col-6 align-center border border-dark "
+            className=" card col-6 align-center border-bottom-0 border-dark "
             style={{ background: "rgba(255, 255, 255, 0.71)" }}
           >
             <h1>Guac-A-Mole</h1>
@@ -77,7 +87,7 @@ class Game extends Component {
               {this.props.score}
               <img
                 src={coin}
-                className="card-img col-6-sm "
+                className="card-img "
                 alt="..."
                 style={{ width: "2.5vh", height: "2.5vh", marginLeft: "5px" }}
               />
@@ -85,16 +95,76 @@ class Game extends Component {
 
             <div className="container-fluid align-center">
               <center>
-                <img
-                  src={Laila}
-                  className="card-img col-6-sm "
-                  alt="..."
-                  style={{ width: "26vh", height: "34vh", marginLeft: "5px" }}
-                />
+                <div className="row">
+                  <div
+                    className="card text-white bg-dark mb-3"
+                    style={{ width: "30rem" }}
+                  >
+                    <div className="row">
+                      <div className="col">
+                        <div
+                          className="card-body"
+                          style={{ fontFamily: "Finger Paint" }}
+                        >
+                          <div className="card-header ">
+                            <h4>
+                              <b>menu :</b>
+                            </h4>
+                          </div>
+                          <h5 className="card-title">Dark card title</h5>
+                          <p className="card-text">
+                            Some quick example text to build on the card title
+                            and make up the bulk of the card's content.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="col">
+                        <div
+                          className="card-body"
+                          style={{ fontFamily: "Finger Paint" }}
+                        >
+                          <div className="card-header ">
+                            <h5>
+                              <b>Current order:</b>
+                            </h5>
+                          </div>
+                          <h5 className="card-title">Dark card title</h5>
+                          <p className="card-text">
+                            {this.state.counter >= customers.length
+                              ? `You are Done with the orders :D`
+                              : `name :
+                           ${this.props.customers[this.state.counter].name}
+                           
+                            order :
+                            ${
+                              this.props.customers[this.state.counter].order
+                            } Guac-A-Mole
+                            
+                            comments:
+                            ${
+                              this.props.customers[this.state.counter].comments
+                            }`}
+                            <br />
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <img
+                    src={Laila}
+                    className="card-img  "
+                    alt="..."
+                    style={{
+                      width: "26vh",
+                      height: "34vh",
+                      marginLeft: "15px"
+                    }}
+                  />
+                </div>
 
                 <div
-                  className="card text-white bg-white  mb-3"
-                  style={{ width: "72vh" }}
+                  className="card text-white bg-white   mb-3"
+                  style={{ width: "90 vh" }}
                 >
                   <div className="row align-center ">
                     {this.state.holes.map(holeID => (
@@ -113,7 +183,7 @@ class Game extends Component {
               </div>
             </div>
           </div>
-          <span className=" container-fluid border border-dark col-3">
+          <span className=" container-fluid  col-3">
             <br></br>
             <img
               src={shop}
@@ -122,6 +192,19 @@ class Game extends Component {
               style={{ width: "50vh", height: "45vh", marginLeft: "-15px" }}
             />
             <br></br>
+            <button style={{ font_size: "24px" }}>
+              <i className="far fa-grin-tongue-squint"></i>
+            </button>
+            <button style={{ font_size: "24px" }}>
+              <i className="far fa-grin-tongue-squint"></i>
+            </button>
+            <button>
+              <i
+                className="em em-peach"
+                aria-role="presentation"
+                aria-label="PEACH"
+              ></i>
+            </button>
           </span>
         </div>
       );

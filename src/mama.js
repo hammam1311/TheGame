@@ -5,20 +5,20 @@ import mama from "./Data/Mama";
 import { connect } from "react-redux";
 class Mama extends Component {
   state = {
-    counter: 0,
+    counter: 1,
     score: this.props.score
   };
 
   render() {
-    //We are taking the score each time it increse
-    // console.log(this.props.score);
-    // {
-    //   this.state.counter === mama.length
-    //     ? this.setState({ counter: 0 })
-    //     : this.props.score > this.state.score
-    //     ? (this.state.counter += 1)
-    //     : (this.state.counter -= 1);
-    // }
+    // We are taking the score each time it increse
+    console.log(this.props.score);
+    {
+      this.state.counter >= mama.length
+        ? this.setState({ counter: 10 })
+        : this.props.score > this.state.score
+        ? (this.state.counter += 1)
+        : (this.state.counter -= 1);
+    }
 
     return (
       <div
