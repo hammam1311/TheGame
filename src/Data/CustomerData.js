@@ -87,21 +87,21 @@ const customers = [
     name: "Tala",
     sex: "f",
     order: 15,
-    comments: "2 guacamole for me and 2 for my friend Jacky Chan "
+    comments: "2 guacamole for me and 3 for my friend Jacky Chan "
   },
   {
     id: 16,
     name: "Abo Al-Sa'adeh",
     sex: "f",
     order: 15,
-    comments: "2 guacamole for me and 2 for A5OOOOOOOOOOy "
+    comments: "3 guacamole for me and 4 for A5ooooooy "
   },
   {
     id: 17,
     name: "Hani N",
     sex: "m",
     order: 15,
-    comments: "eat sleep film Essam While sleeping repeat "
+    comments: "eat sleep film Essam While sleeping -on zoom- repeat "
   },
   {
     id: 18,
@@ -128,9 +128,19 @@ const customers = [
     id: 21,
     name: "Hani H'",
     sex: "m",
-    order: 15,
+    order: 51,
     comments: "50 guacamole for me and 2 for Hammam , ooh make it 1 for Hammam "
   },
+  ,
+  {
+    id: 22,
+    name: "Hamza'",
+    sex: "m",
+    order: 15,
+    comments: "Which Star Wars character works at a restaurant? Darth Waiter "
+  },
+
+
 ];
 
 export default customers;

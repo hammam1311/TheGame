@@ -13,6 +13,8 @@ import CustomerCard from "./customerCards";
 import customers from "./Data/CustomerData";
 import Shop from "./Shop"
 import MamaGift from "./MamaGift"
+import heart from "./images/heart.png"
+
 let lastHole;
 
 class Game extends Component {
@@ -23,6 +25,18 @@ class Game extends Component {
 
   }
 
+  coco = () => {
+    return (
+      <div>
+        <b>Customer name:</b>
+        <p>   {this.props.customers[this.state.counter].name} </p>
+        <b>Order:  </b>
+        <p>{this.props.customers[this.state.counter].order + " Guacamoles "}</p>
+        <b>Comments: </b>
+        <p>{this.props.customers[this.state.counter].comments}</p>
+      </div>
+    )
+  }
 
 
   componentDidMount() {
@@ -33,6 +47,7 @@ class Game extends Component {
   componentWillUnmount() {
     clearInterval(this.usedHole);
   }
+
 
 
 
@@ -65,13 +80,28 @@ class Game extends Component {
         <div className=" container-fluid text-center row  2vh">
           <span className=" container-fluid  col-3">
             <br></br>
-
+            0
             <img
-              src={mama}
-              className="card-img-fluid "
+              src={heart}
+              className="card-img "
               alt="..."
-              style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
+              style={{
+                width: "2.5vh",
+                height: "2.5vh",
+                marginLeft: "5px",
+                alignSelf: "center"
+              }}
             />
+            <center>
+
+              <img
+                src={mama}
+                className="card-img-fluid text- "
+                alt="..."
+                style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
+              />
+            </center>
+
             <Mama />
             <MamaGift />
 
@@ -148,18 +178,10 @@ class Game extends Component {
                           <p className="card-text">
                             {this.state.counter >= customers.length
                               ? `You are Done with the orders :D`
-                              : `*customer :
-                              ${this.props.customers[this.state.counter].name}
+                              : this.coco()}
 
-                              *order :
-                            ${
-                              this.props.customers[this.state.counter].order
-                              } Guac-A-Mole
 
-                            *comments:
-                            ${
-                              this.props.customers[this.state.counter].comments
-                              }`}
+
 
                           </p>
                         </div>
@@ -173,7 +195,8 @@ class Game extends Component {
                     style={{
                       width: "26vh",
                       height: "34vh",
-                      marginLeft: "15px"
+                      marginLeft: "15px",
+                      marginTop: "75px"
                     }}
                   />
                 </div>
@@ -198,6 +221,8 @@ class Game extends Component {
                 ))}
               </div>
             </div>
+            <button type="button" class="btn btn-success btn-lg">Expand your bisness ( Cost : </button>
+
           </div>
           <span className=" container-fluid  col-3">
             <br></br>
@@ -211,10 +236,9 @@ class Game extends Component {
 
             <Shop />
           </span>
+          <button type="button " class="btn btn-danger btn-lg">End game</button>
 
-
-
-        </div>
+        </div >
       );
   }
 }
