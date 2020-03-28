@@ -8,7 +8,7 @@ import {
 } from "../actions/actionTypes";
 
 const initialState = {
-  score: 0,
+  score: 9999,
   time: 1000,
   heart: 0,
   menu: 1,

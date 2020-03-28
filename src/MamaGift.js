@@ -27,11 +27,10 @@ class MamaGift extends Component {
     if (points < ShopForGifts[0]) {
       alert("Not enough Coins!");
     } else if (!this.state.gifts.flower && points >= ShopForGifts[0]) {
-      alert("HELOO");
       let gifts = this.state.gifts;
       gifts.flower = true;
       this.props.pay(ShopForGifts[0]);
-      this.props.HeartInc(ShopForGifts[0]);
+      this.props.HeartInc(HeartPlus[0]);
       this.setState({
         gifts: gifts
       });
@@ -43,11 +42,10 @@ class MamaGift extends Component {
     if (points < ShopForGifts[1]) {
       alert("Not enough Coins!");
     } else if (!this.state.gifts.ring && points >= ShopForGifts[1]) {
-      alert("HELOO");
       let gifts = this.state.gifts;
       gifts.ring = true;
       this.props.pay(ShopForGifts[1]);
-      this.props.HeartInc(ShopForGifts[1]);
+      this.props.HeartInc(HeartPlus[1]);
 
       this.setState({
         gifts: gifts
@@ -59,11 +57,10 @@ class MamaGift extends Component {
     if (points < ShopForGifts[2]) {
       alert("Not enough Coins!");
     } else if (!this.state.gifts.car && points >= ShopForGifts[2]) {
-      alert("HELOO");
       let gifts = this.state.gifts;
       gifts.car = true;
       this.props.pay(ShopForGifts[2]);
-      this.props.HeartInc(ShopForGifts[2]);
+      this.props.HeartInc(HeartPlus[2]);
 
       this.setState({
         gifts: gifts
@@ -75,11 +72,10 @@ class MamaGift extends Component {
     if (points < ShopForGifts[3]) {
       alert("Not enough Coins!");
     } else if (!this.state.gifts.giraf && points >= ShopForGifts[3]) {
-      alert("HELOO");
       let gifts = this.state.gifts;
       gifts.giraffe = true;
       this.props.pay(ShopForGifts[3]);
-      this.props.HeartInc(ShopForGifts[3]);
+      this.props.HeartInc(HeartPlus[3]);
 
       this.setState({
         gifts: gifts
@@ -91,11 +87,10 @@ class MamaGift extends Component {
     if (points < ShopForGifts[4]) {
       alert("Not enough Coins!");
     } else if (!this.state.gifts.alien && points >= ShopForGifts[4]) {
-      alert("HELOO");
       let gifts = this.state.gifts;
       gifts.alien = true;
       this.props.pay(ShopForGifts[4]);
-      this.props.HeartInc(ShopForGifts[4]);
+      this.props.HeartInc(HeartPlus[4]);
 
       this.setState({
         gifts: gifts

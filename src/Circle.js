@@ -27,30 +27,6 @@ class Circle extends Component {
     images: [Empty, Avocado, Guacamole]
   };
 
-  // cococ() {
-  //   if (this.props.menu === 1) {
-  //     var images = this.state.images;
-  //     this.setState({ images: [Empty, Avocado, Guacamole] });
-  //   }
-  //   if (this.props.menu === 2) {
-  //     var images = this.state.images;
-
-  //     this.setState({ images: [Empty, Apple, ApplePie] });
-  //   }
-  //   if (this.props.menu === 3) {
-  //     this.setState({ images: [Empty, Banana, BananaIce] });
-  //   }
-  //   if (this.props.menu === 4) {
-  //     this.setState({ images: [Empty, WaterMelon, WaterMelonIce] });
-  //   }
-  //   if (this.props.menu === 5) {
-  //     this.setState({ images: [Empty, PineApple, PineAppleCake] });
-  //   }
-  //   if (this.props.menu === 6) {
-  //     this.setState({ images: [Empty, Peach, Mhalabieh] });
-  //   }
-  // }
-
   handleClick = () => {
     if (this.props.menu === 1) {
       this.setState({ images: [Empty, Avocado, Guacamole] });
