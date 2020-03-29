@@ -19,7 +19,7 @@ class Shop extends Component {
     peach: false
   };
 
-  buyApples(props) {
+  buyApples() {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[0]) {
       alert("Not enough Coins!");
@@ -36,12 +36,13 @@ class Shop extends Component {
     }
   }
 
-  buyBanana(props) {
+  buyBanana() {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[1]) {
       alert("Not enough Coins!");
     } else if (!this.state.Banana && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[1]);
+      this.props.IncMenu();
       let upgrade = this.state.Banana;
       upgrade = true;
       let state = this.state;
@@ -52,12 +53,14 @@ class Shop extends Component {
     }
   }
 
-  buyWaterMelon(props) {
+  buyWaterMelon() {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[2]) {
       alert("Not enough Coins!");
     } else if (!this.state.WaterMelon && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[2]);
+      this.props.IncMenu();
+
       let upgrade = this.state.WaterMelon;
       upgrade = true;
       let state = this.state;
@@ -67,12 +70,14 @@ class Shop extends Component {
       });
     }
   }
-  buyPineapple(props) {
+  buyPineapple() {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[3]) {
       alert("Not enough Coins!");
     } else if (!this.state.Pineapple && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[3]);
+      this.props.IncMenu();
+
       let upgrade = this.state.Pineapple;
       upgrade = true;
       let state = this.state;
@@ -83,12 +88,14 @@ class Shop extends Component {
     }
   }
 
-  buypeach(props) {
+  buypeach() {
     let points = this.props.score;
     if (points < ShopUpgradeCosts[4]) {
       alert("Not enough Coins!");
     } else if (!this.state.peach && points >= ShopUpgradeCosts[0]) {
       this.props.pay(ShopUpgradeCosts[4]);
+      this.props.IncMenu();
+
       let upgrade = this.state.peach;
       upgrade = true;
       let state = this.state;

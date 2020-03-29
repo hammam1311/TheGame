@@ -28,7 +28,6 @@ class MamaGift extends Component {
             alert("Not enough Coins!");
         } else if (!this.state.gifts.flower && points >= ShopForGifts[0]) {
             let gifts = this.state.gifts;
-            gifts.flower = true;
             this.props.pay(ShopForGifts[0]);
             this.props.HeartInc(HeartPlus[0]);
             this.setState({
@@ -52,13 +51,13 @@ class MamaGift extends Component {
             });
         }
     }
+
     buyCar() {
         let points = this.props.score;
         if (points < ShopForGifts[2]) {
             alert("Not enough Coins!");
         } else if (!this.state.gifts.car && points >= ShopForGifts[2]) {
             let gifts = this.state.gifts;
-            gifts.car = true;
             this.props.pay(ShopForGifts[2]);
             this.props.HeartInc(HeartPlus[2]);
 
@@ -67,13 +66,13 @@ class MamaGift extends Component {
             });
         }
     }
+
     buyGiraffe() {
         let points = this.props.score;
         if (points < ShopForGifts[3]) {
             alert("Not enough Coins!");
         } else if (!this.state.gifts.giraf && points >= ShopForGifts[3]) {
             let gifts = this.state.gifts;
-            gifts.giraffe = true;
             this.props.pay(ShopForGifts[3]);
             this.props.HeartInc(HeartPlus[3]);
 
@@ -82,13 +81,13 @@ class MamaGift extends Component {
             });
         }
     }
+
     buyAlien() {
         let points = this.props.score;
         if (points < ShopForGifts[4]) {
             alert("Not enough Coins!");
         } else if (!this.state.gifts.alien && points >= ShopForGifts[4]) {
             let gifts = this.state.gifts;
-            gifts.alien = true;
             this.props.pay(ShopForGifts[4]);
             this.props.HeartInc(HeartPlus[4]);
 
