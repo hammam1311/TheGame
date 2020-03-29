@@ -109,7 +109,7 @@ class Game extends Component {
       else {
         this.state.counter += 1;
       }
-    }, 7000);
+    }, 5000);
   }
   componentWillUnmount() {
     clearInterval(this.usedHole);
