@@ -4,7 +4,8 @@ import {
   RESET,
   DECREMENTSCORE,
   INCREMENTHEART,
-  INCREMENT_MENU
+  INCREMENT_MENU,
+  INCREMENT_STORY
 } from "../actions/actionTypes";
 
 const initialState = {
@@ -13,8 +14,7 @@ const initialState = {
   heart: 5,
   menu: 1,
   reset: false,
-  ending: 1
-
+  story: 0
 };
 
 const reducer = (state = initialState, action) => {
@@ -50,6 +50,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         menu: state.menu + 1
+      };
+    case INCREMENT_STORY:
+      return {
+        ...state,
+        story: state.story + 1
       };
 
     default:

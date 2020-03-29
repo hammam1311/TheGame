@@ -135,19 +135,18 @@ const customers = [
   },
   {
     id: 21,
-    name: "Hani H'",
+    name: "Hani H",
     sex: "m",
     order: 52,
     comments: "50 guacamole for me and 2 for Hammam , ooh make it 1 for Hammam "
   },
-  ,
   {
     id: 22,
     name: "Hamza'",
     sex: "m",
     order: 11,
     comments: "Which Star Wars character works at a restaurant? Darth Waiter "
-  },
+  }
 ];
 
 export default customers;

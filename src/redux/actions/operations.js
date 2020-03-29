@@ -4,7 +4,8 @@ import {
   RESET,
   DECREMENTSCORE,
   INCREMENTHEART,
-  INCREMENT_MENU
+  INCREMENT_MENU,
+  INCREMENT_STORY
 } from "./actionTypes";
 
 //Increment The score
@@ -48,5 +49,10 @@ export const incrementHeart = HeartInc => {
 export const IncMenu = () => {
   return {
     type: INCREMENT_MENU
+  };
+}; //Increment The Menu
+export const IncStory = () => {
+  return {
+    type: INCREMENT_STORY
   };
 };

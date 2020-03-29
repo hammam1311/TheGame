@@ -46,6 +46,7 @@ class Circle extends Component {
     if (this.props.menu === 6) {
       this.setState({ images: [Empty, Peach, Mhalabieh] });
     }
+
     if (this.props.usedHole === 1) {
       this.props.Increment();
       this.setState({ pressed: true });
@@ -65,8 +66,8 @@ class Circle extends Component {
               this.state.pressed
                 ? this.state.images[2]
                 : this.props.usedHole === 1
-                  ? this.state.images[1]
-                  : this.state.images[0]
+                ? this.state.images[1]
+                : this.state.images[0]
             }
             alt="Logo"
             width="130vh"

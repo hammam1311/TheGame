@@ -10,11 +10,10 @@ class Mama extends Component {
   };
 
   componentDidMount() {
-    this.usedHole = setInterval(() => {
-      if (this.state.counter <= mama.length)
-        this.state.counter += 1;
+    setInterval(() => {
+      if (this.state.counter <= mama.length) this.state.counter += 1;
       else {
-        this.setState({ counter: 1 })
+        this.setState({ counter: 1 });
       }
     }, 5000);
   }

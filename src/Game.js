@@ -14,10 +14,10 @@ import MamaGift from "./MamaGift";
 import heart from "./images/heart.png";
 import Sound from "react-sound";
 import song from "./Places - Bloome [Vlog No Copyright Music].mp3";
-import Story from "./NextStory"
+import Story from "./NextStory";
 import { Link } from "react-router-dom";
 
-import Test from "./Ending"
+import Test from "./Ending";
 import NextStory from "./NextStory";
 
 let lastHole;
@@ -28,7 +28,6 @@ class Game extends Component {
     holes: [0, 1, 2, 3, 4, 5],
     counter: 0,
     ending: 1
-
   };
 
   Customers = () => {
@@ -43,12 +42,6 @@ class Game extends Component {
       </div>
     );
   };
-
-  next = () => {
-    if (this.state.score >= this.state.costm && this.props.heart >= this.state.costh) {
-      this.setState({ costh: this.state.costh + 800, costm: this.state.costm + 6000 })
-    }
-  }
 
   Main_Menu = () => {
     if (this.props.menu === 1) {
@@ -76,7 +69,7 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples Pie  10 $ <br />
+          Apples Pie 10 $ <br />
           Banana Sundae 15$ <br />
           WaterMelon chocolate stick 25$ <br />
         </div>
@@ -86,7 +79,7 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples Pie  10 $ <br />
+          Apples Pie 10 $ <br />
           Banana Sundae 15$ <br />
           WaterMelon chocolate stick 25$ <br />
           PineApple cake 50$ <br />
@@ -97,7 +90,7 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples Pie  10 $ <br />
+          Apples Pie 10 $ <br />
           Banana Sundae 15$ <br />
           WaterMelon chocolate stick 25$ <br />
           PineApple cake 50$ <br />
@@ -106,10 +99,17 @@ class Game extends Component {
       );
     }
   };
+
   componentDidMount() {
     this.usedHole = setInterval(() => {
       this.props.dec();
     }, 1000);
+    setInterval(() => {
+      if (this.state.counter >= customers.length) this.setState({ counter: 0 });
+      else {
+        this.state.counter += 1;
+      }
+    }, 7000);
   }
   componentWillUnmount() {
     clearInterval(this.usedHole);
@@ -128,14 +128,15 @@ class Game extends Component {
   } //End of the randomHoles function
 
   render() {
-    let CustomerScore = this.props.customers[this.state.counter];
-    if (this.state.counter === customers.length) {
-      return <EndGame />;
-    } else {
-      this.props.score >= CustomerScore.order * 5
-        ? (this.state.counter += 1)
-        : (this.state.counter = this.state.counter);
-    }
+    // let CustomerScore = this.props.customers[this.state.counter];
+
+    // if (this.state.counter > customers.length) {
+    //   this.setState({ counter: 1 });
+    // } else {
+    //   this.props.score >= CustomerScore.order * 5
+    //     ? (this.state.counter += 1)
+    //     : (this.state.counter = this.state.counter);
+    // }
 
     if (this.props.time <= 0) {
       return <EndGame />;
@@ -153,8 +154,6 @@ class Game extends Component {
           <span className=" container-fluid  col-3">
             <br />
             <h3>
-
-
               {this.props.heart}
               <img
                 src={heart}
@@ -179,7 +178,6 @@ class Game extends Component {
             </center>
             <Mama />
             <MamaGift />
-
           </span>
 
           <div
@@ -187,7 +185,11 @@ class Game extends Component {
             style={{ background: "rgba(255, 255, 255, 0.71)" }}
           >
             <div className="row">
-              <h4 className="text-center col" style={{ alignSelf: "center" }}>
+              <h4
+                className="text-center col"
+                hidden
+                style={{ alignSelf: "center" }}
+              >
                 Time:
                 <span
                   style={{
@@ -250,7 +252,7 @@ class Game extends Component {
                           </div>
                           <p className="card-text">
                             {this.state.counter >= customers.length
-                              ? `You are Done with the orders :D`
+                              ? `It's lunch time  `
                               : this.Customers()}
                           </p>
                         </div>
@@ -301,10 +303,9 @@ class Game extends Component {
             <Link to="/test">
               <button type="button " class="btn btn-danger btn-lg">
                 End game
-          </button>
+              </button>
             </Link>
           </span>
-
         </div>
       );
   }

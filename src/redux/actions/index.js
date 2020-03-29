@@ -4,5 +4,6 @@ export {
   reset,
   decrementScore,
   incrementHeart,
-  IncMenu
+  IncMenu,
+  IncStory
 } from "./operations";
