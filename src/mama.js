@@ -9,16 +9,13 @@ class Mama extends Component {
     score: this.props.score
   };
 
+  componentDidMount() {
+    this.usedHole = setInterval(() => {
+      this.state.counter += 1;
+    }, 5000);
+  }
   render() {
     // We are taking the score each time it increse
-    console.log(mama.length);
-    {
-      this.state.counter >= mama.length
-        ? this.setState({ counter: 10 })
-        : this.props.score > this.state.score
-        ? (this.state.counter += 1)
-        : (this.state.counter -= 1);
-    }
 
     return (
       <div

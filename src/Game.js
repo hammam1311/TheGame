@@ -12,6 +12,8 @@ import customers from "./Data/CustomerData";
 import Shop from "./Shop";
 import MamaGift from "./MamaGift";
 import heart from "./images/heart.png";
+import Sound from "react-sound";
+import song from "./Dr. Jean - The Guacamole Song.mp3";
 
 let lastHole;
 
@@ -22,7 +24,7 @@ class Game extends Component {
     counter: 0
   };
 
-  coco = () => {
+  Customers = () => {
     return (
       <div>
         <b>Customer name:</b>
@@ -35,6 +37,62 @@ class Game extends Component {
     );
   };
 
+  Main_Menu = () => {
+    if (this.props.menu === 1) {
+      return <div>Guac-A-Mole 5$</div>;
+    }
+    if (this.props.menu === 2) {
+      return (
+        <div>
+          Guac-A-Mole 5$ <br />
+          Apples 10 $ <br />
+        </div>
+      );
+    }
+    if (this.props.menu === 3) {
+      return (
+        <div>
+          Guac-A-Mole 5$ <br />
+          Apples 10 $ <br />
+          Banana 10$ <br />
+        </div>
+      );
+    }
+
+    if (this.props.menu === 4) {
+      return (
+        <div>
+          Guac-A-Mole 5$ <br />
+          Apples 10 $ <br />
+          Banana 10$ <br />
+          WaterMelon 25$ <br />
+        </div>
+      );
+    }
+    if (this.props.menu === 5) {
+      return (
+        <div>
+          Guac-A-Mole 5$ <br />
+          Apples 10 $ <br />
+          Banana 10$ <br />
+          WaterMelon 25$ <br />
+          PineApple 50$ <br />
+        </div>
+      );
+    }
+    if (this.props.menu === 6) {
+      return (
+        <div>
+          Guac-A-Mole 5$ <br />
+          Apples 10 $ <br />
+          Banana 10$ <br />
+          WaterMelon 25$ <br />
+          PineApple 50$ <br />
+          Peach 55 $ <br />
+        </div>
+      );
+    }
+  };
   componentDidMount() {
     this.usedHole = setInterval(() => {
       this.props.dec();
@@ -71,8 +129,16 @@ class Game extends Component {
     } else
       return (
         <div className=" container-fluid text-center row  2vh">
+          <Sound
+            url={song}
+            playStatus={Sound.status.PLAYING}
+            onLoading={this.handleSongLoading}
+            onPlaying={this.handleSongPlaying}
+            onFinishedPlaying={this.handleSongFinishedPlaying}
+            volume={50}
+          />
           <span className=" container-fluid  col-3">
-            <br></br>
+            <br />
             {this.props.heart}
             <img
               src={heart}
@@ -150,7 +216,7 @@ class Game extends Component {
                               <b>menu :</b>
                             </h4>
                           </div>
-                          <h5 className="card-text">guacamole : 5 $</h5>
+                          <h5 className="card-text">{this.Main_Menu()}</h5>
                         </div>
                       </div>
                       <div className="col">
@@ -166,7 +232,7 @@ class Game extends Component {
                           <p className="card-text">
                             {this.state.counter >= customers.length
                               ? `You are Done with the orders :D`
-                              : this.coco()}
+                              : this.Customers()}
                           </p>
                         </div>
                       </div>
@@ -225,7 +291,8 @@ const mapStateToProps = state => {
   return {
     score: state.operationsState.score,
     time: state.operationsState.time,
-    heart: state.operationsState.heart
+    heart: state.operationsState.heart,
+    menu: state.operationsState.menu
   };
 };
 
