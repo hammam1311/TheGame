@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+import { connect, shallowEqual } from "react-redux";
 import { INCREMENT } from "./redux/actions/actionTypes";
 import Empty from "./images/Empty.png";
 
@@ -24,9 +24,30 @@ import Mhalabieh from "./images/Mhalabieh.png";
 class Circle extends Component {
   state = {
     pressed: false,
-    images: [Empty, Avocado, Guacamole]
+    i: this.props.menu - 1,
+    images: [Empty, Avocado, Guacamole],
+    images2: [
+      [Empty, Avocado, Guacamole],
+      [Empty, Apple, ApplePie],
+      [Empty, Banana, BananaIce],
+      [Empty, WaterMelon, WaterMelonIce],
+      [Empty, PineApple, PineAppleCake],
+      [Empty, Peach, Mhalabieh]
+    ]
   };
 
+  componentDidMount() {
+    setInterval(() => {
+      if (
+        this.state.i >= this.state.images2.length - 1 ||
+        this.state.i >= this.props.menu - 1
+      )
+        this.setState({ i: 0 });
+      else {
+        this.state.i += 1;
+      }
+    }, 5000);
+  }
   handleClick = () => {
     if (this.props.menu === 1) {
       this.setState({ images: [Empty, Avocado, Guacamole] });
@@ -63,9 +84,9 @@ class Circle extends Component {
           <img
             src={
               this.state.pressed
-                ? this.state.images[2]
+                ? this.state.images2[this.state.i][2]
                 : this.props.usedHole === 1
-                  ? this.state.images[1]
+                  ? this.state.images2[this.state.i][1]
                   : this.state.images[0]
             }
             alt="Logo"
