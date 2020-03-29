@@ -21,7 +21,6 @@ const Home = () => {
             className=" card col-8 align-center border  "
             style={{ background: "rgba(255, 255, 255, 0.71)" }}
           >
-            <h3 className="card-title">Guac-A-Mole</h3>
             <h4 className="card-text">let me tell you about liala ..</h4>
             <p className="card-text">
               <b className="text">
@@ -47,6 +46,7 @@ const Home = () => {
             </Link>
           </div>
         </center>
+        <h3 className="card-title">DONT REFRESH THE SAVE STUFF DOESN'T WORK!!!!</h3>
       </div>
     </div>
   );
