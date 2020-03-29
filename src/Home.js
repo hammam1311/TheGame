@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import backstory from "./images/backstory.jpg";
+import Story from "./NextStory"
 
 const Home = () => {
   return (
@@ -46,7 +47,13 @@ const Home = () => {
             </Link>
           </div>
         </center>
-        <h3 className="card-title">DONT REFRESH THE SAVE STUFF DOESN'T WORK!!!!</h3>
+
+
+
+
+
+        <h3 className="card-title">DONT REFRESH THE SAVE STUFF DOESN'T WORK YET !!!!</h3>
+
       </div>
     </div>
   );

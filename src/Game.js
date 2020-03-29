@@ -13,7 +13,12 @@ import Shop from "./Shop";
 import MamaGift from "./MamaGift";
 import heart from "./images/heart.png";
 import Sound from "react-sound";
-import song from "./Dr. Jean - The Guacamole Song.mp3";
+import song from "./Places - Bloome [Vlog No Copyright Music].mp3";
+import Story from "./NextStory"
+import { Link } from "react-router-dom";
+
+import Test from "./Ending"
+import NextStory from "./NextStory";
 
 let lastHole;
 
@@ -21,7 +26,9 @@ class Game extends Component {
   state = {
     score: this.props.score,
     holes: [0, 1, 2, 3, 4, 5],
-    counter: 0
+    counter: 0,
+    ending: 1
+
   };
 
   Customers = () => {
@@ -37,6 +44,12 @@ class Game extends Component {
     );
   };
 
+  next = () => {
+    if (this.state.score >= this.state.costm && this.props.heart >= this.state.costh) {
+      this.setState({ costh: this.state.costh + 800, costm: this.state.costm + 6000 })
+    }
+  }
+
   Main_Menu = () => {
     if (this.props.menu === 1) {
       return <div>Guac-A-Mole 5$</div>;
@@ -45,7 +58,7 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples 10 $ <br />
+          Apples Pie 10 $ <br />
         </div>
       );
     }
@@ -53,8 +66,8 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples 10 $ <br />
-          Banana 10$ <br />
+          Apples Pie 10 $ <br />
+          Banana Sundae 15$ <br />
         </div>
       );
     }
@@ -63,9 +76,9 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples 10 $ <br />
-          Banana 10$ <br />
-          WaterMelon 25$ <br />
+          Apples Pie  10 $ <br />
+          Banana Sundae 15$ <br />
+          WaterMelon chocolate stick 25$ <br />
         </div>
       );
     }
@@ -73,10 +86,10 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples 10 $ <br />
-          Banana 10$ <br />
-          WaterMelon 25$ <br />
-          PineApple 50$ <br />
+          Apples Pie  10 $ <br />
+          Banana Sundae 15$ <br />
+          WaterMelon chocolate stick 25$ <br />
+          PineApple cake 50$ <br />
         </div>
       );
     }
@@ -84,11 +97,11 @@ class Game extends Component {
       return (
         <div>
           Guac-A-Mole 5$ <br />
-          Apples 10 $ <br />
-          Banana 10$ <br />
-          WaterMelon 25$ <br />
-          PineApple 50$ <br />
-          Peach 55 $ <br />
+          Apples Pie  10 $ <br />
+          Banana Sundae 15$ <br />
+          WaterMelon chocolate stick 25$ <br />
+          PineApple cake 50$ <br />
+          Peach Mhalabia 75 $ <br />
         </div>
       );
     }
@@ -135,22 +148,27 @@ class Game extends Component {
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
-            volume={50}
+            volume={0}
           />
           <span className=" container-fluid  col-3">
             <br />
-            {this.props.heart}
-            <img
-              src={heart}
-              className="card-img "
-              alt="..."
-              style={{
-                width: "2.5vh",
-                height: "2.5vh",
-                marginLeft: "5px",
-                alignSelf: "center"
-              }}
-            />
+            <h3>
+
+
+              {this.props.heart}
+              <img
+                src={heart}
+                className="card-img "
+                alt="..."
+                style={{
+                  width: "2.5vh",
+                  height: "2.5vh",
+                  marginLeft: "5px",
+                  alignSelf: "center"
+                }}
+              />
+            </h3>
+
             <center>
               <img
                 src={mama}
@@ -161,6 +179,7 @@ class Game extends Component {
             </center>
             <Mama />
             <MamaGift />
+
           </span>
 
           <div
@@ -246,14 +265,14 @@ class Game extends Component {
                       width: "26vh",
                       height: "34vh",
                       marginLeft: "15px",
-                      marginTop: "75px"
+                      marginTop: "120px"
                     }}
                   />
                 </div>
 
                 <div
                   className="card text-white bg-white   mb-3"
-                  style={{ width: "90 vh" }}
+                  style={{ width: "65vh" }}
                 >
                   <div className="row align-center ">
                     {this.state.holes.map(holeID => (
@@ -261,11 +280,9 @@ class Game extends Component {
                     ))}
                   </div>
                 </div>
+                <NextStory />
               </center>
             </div>
-            <button type="button" class="btn btn-success btn-lg">
-              Expand your bisness ( Cost :{" "}
-            </button>
           </div>
           <span className=" container-fluid  col-3">
             <br></br>
@@ -278,10 +295,16 @@ class Game extends Component {
             <br></br>
 
             <Shop />
-          </span>
-          <button type="button " class="btn btn-danger btn-lg">
-            End game
+            <br></br>
+            <br></br>
+            <br></br>
+            <Link to="/test">
+              <button type="button " class="btn btn-danger btn-lg">
+                End game
           </button>
+            </Link>
+          </span>
+
         </div>
       );
   }

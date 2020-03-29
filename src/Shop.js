@@ -106,7 +106,7 @@ class Shop extends Component {
     }
   }
   render() {
-    const renderer = () => {};
+    const renderer = () => { };
     return (
       <div>
         <div className="card">
@@ -126,7 +126,7 @@ class Shop extends Component {
                       alignSelf: "center"
                     }}
                   />
-                  Mounthly apples supply
+                  Monthly apples supply
                   {!this.state.Apples ? (
                     <button
                       type="button"
@@ -137,8 +137,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[0]} $
                     </button>
                   ) : (
-                    <br></br>
-                  )}
+                      <br></br>
+                    )}
                 </li>
 
                 <li className="list-group-item">
@@ -153,7 +153,7 @@ class Shop extends Component {
                       alignSelf: "center"
                     }}
                   />
-                  Mounthly Banana supply
+                  Monthly Banana supply
                   {!this.state.Banana ? (
                     <button
                       type="button"
@@ -164,8 +164,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[1]} $
                     </button>
                   ) : (
-                    <br></br>
-                  )}
+                      <br></br>
+                    )}
                 </li>
 
                 <li className="list-group-item">
@@ -180,7 +180,7 @@ class Shop extends Component {
                       alignSelf: "center"
                     }}
                   />
-                  Mounthly Watermelon supply
+                  Monthly Watermelon supply
                   {!this.state.WaterMelon ? (
                     <button
                       type="button"
@@ -191,8 +191,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[2]} $
                     </button>
                   ) : (
-                    <br></br>
-                  )}
+                      <br></br>
+                    )}
                 </li>
 
                 <li className="list-group-item">
@@ -207,7 +207,7 @@ class Shop extends Component {
                       alignSelf: "center"
                     }}
                   />
-                  Mounthly pineapple supply
+                  Monthly pineapple supply
                   {!this.state.Pineapple ? (
                     <button
                       type="button"
@@ -218,8 +218,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[3]} $
                     </button>
                   ) : (
-                    <br></br>
-                  )}
+                      <br></br>
+                    )}
                 </li>
                 <li className="list-group-item">
                   <img
@@ -233,7 +233,7 @@ class Shop extends Component {
                       alignSelf: "center"
                     }}
                   />
-                  Mounthly peach supply
+                  Monthly peach supply
                   {!this.state.peach ? (
                     <button
                       type="button"
@@ -244,8 +244,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[4]} $
                     </button>
                   ) : (
-                    <br></br>
-                  )}
+                      <br></br>
+                    )}
                 </li>
               </center>
             </ul>

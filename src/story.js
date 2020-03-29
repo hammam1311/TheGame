@@ -1,7 +1,9 @@
-import React from "react"
+
+import React, { Component } from "react";
 import cart from "./images/cart.jpg"
 import miniPlace from "./images/miniPlace.jpg"
 import mall from "./images/mall.jpg"
+import Modal from "react-responsive-modal";
 
 
 export const Story1 = () => {
@@ -10,8 +12,8 @@ export const Story1 = () => {
             <center>
                 <div class="card mb-3 border border-dark "
                     style={{
-                        width: "65%",
-                        height: "65%",
+                        width: "100%",
+                        height: "100%",
                         border: "solid"
                     }}>
                     <img class="card-img-top" src={cart} alt="Card image cap"
@@ -28,7 +30,7 @@ export const Story1 = () => {
                         <h5 class="card-text">help her sell those delicious guacamole and make her buisness grow .  </h5>
                         <h5 class="card-text">And remmember if Liala want to expand her buisness Liala needs her Mama blessing *big heart emoji* </h5>
                     </div>
-                    <button type="button" class="btn btn-success btn-lg"> OK </button>    </div>
+                </div>
             </center>
         </div>
     )
@@ -40,14 +42,14 @@ export const Story2 = () => {
             <center>
                 <div class="card mb-3 border border-dark "
                     style={{
-                        width: "65%",
-                        height: "65%",
+                        width: "100%",
+                        height: "100%",
                         border: "solid"
                     }}>
                     <img class="card-img-top" src={miniPlace} alt="Card image cap"
                         style={{
-                            width: "50%",
-                            height: "50%",
+                            width: "100%",
+                            height: "100%",
                             marginLeft: "15px",
                             alignSelf: "center"
                         }}
@@ -61,7 +63,7 @@ export const Story2 = () => {
             </b>
                         </h5>
                     </div>
-                    <button type="button" class="btn btn-success btn-lg"> OK </button>    </div>
+                </div>
             </center>
 
 
@@ -76,14 +78,14 @@ export const Story3 = () => {
             <center>
                 <div class="card mb-3 border border-dark "
                     style={{
-                        width: "65%",
-                        height: "65%",
+                        width: "100%",
+                        height: "100%",
                         border: "solid"
                     }}>
                     <img class="card-img-top" src={mall} alt="Card image cap"
                         style={{
-                            width: "50%",
-                            height: "50%",
+                            width: "100%",
+                            height: "100%",
                             marginLeft: "15px",
                             alignSelf: "center"
                         }}
@@ -93,7 +95,7 @@ export const Story3 = () => {
                         <h5 class="card-text">Now is the real challenge .. </h5>
                         <h5 class="card-text">Can Laila become a millunare?! *selling guacamoles and stuff* </h5>
                     </div>
-                    <button type="button" class="btn btn-success btn-lg"> OK </button>
+
                 </div>
             </center>
 

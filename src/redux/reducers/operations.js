@@ -8,11 +8,13 @@ import {
 } from "../actions/actionTypes";
 
 const initialState = {
-  score: 9999,
-  time: 1000,
-  heart: 0,
+  score: 30,
+  time: 72000,
+  heart: 5,
   menu: 1,
-  reset: false
+  reset: false,
+  ending: 1
+
 };
 
 const reducer = (state = initialState, action) => {

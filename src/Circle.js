@@ -65,12 +65,12 @@ class Circle extends Component {
               this.state.pressed
                 ? this.state.images[2]
                 : this.props.usedHole === 1
-                ? this.state.images[1]
-                : this.state.images[0]
+                  ? this.state.images[1]
+                  : this.state.images[0]
             }
             alt="Logo"
-            width="185vh"
-            height="185vh"
+            width="130vh"
+            height="130vh"
             onClick={this.handleClick}
           />
         </div>

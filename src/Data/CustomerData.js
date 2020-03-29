@@ -19,45 +19,45 @@ const customers = [
     id: 3,
     name: "AUB",
     sex: "m",
-    order: 20,
+    order: 5,
     comments: "I hate Mansaf"
   },
   {
     id: 4,
     name: "Anna",
     sex: "f",
-    order: 40,
+    order: 6,
     comments: " this is Craaaaaaazyy!! delicious"
   },
   {
     id: 5,
     name: "San-deago",
     sex: "m",
-    order: 80,
+    order: 6,
     comments: "errrrr compurrrrr why there is no 'r' in guacamole"
   },
   {
     id: 6,
     name: "Abood",
     sex: "m",
-    order: 100,
+    order: 8,
     comments: "Eat code sleep repeat and sometimes I don't sleep"
   },
   {
     id: 7,
     name: "Essam",
     sex: "m",
-    order: 125,
+    order: 8,
     comments: "eeeash howeeeeee ??"
   },
 
-  { id: 8, name: "Ayham", sex: "m", order: 150, comments: "ما شا الله عنكم" },
+  { id: 8, name: "Ayham", sex: "m", order: 10, comments: "ما شا الله عنكم" },
 
   {
     id: 9,
     name: "Fawaz",
     sex: "m",
-    order: 175,
+    order: 12,
     comments: "*deep scary noise*"
   },
 
@@ -65,28 +65,28 @@ const customers = [
     id: 10,
     name: "Sarah",
     sex: "f",
-    order: 150,
+    order: 19,
     comments: "if I dont get the order on time you have to baby-shark dance"
   },
   {
     id: 11,
     name: "Ghada",
     sex: "f",
-    order: 155,
+    order: 6,
     comments: "Do you make LAZAGEYAAT ?? "
   },
   {
     id: 12,
     name: "Bachira",
     sex: "f",
-    order: 160,
+    order: 12,
     comments: "Fast please I have a meeting with Messi in 30 mintes"
   },
   {
     id: 13,
     name: "Sera taiseer",
     sex: "f",
-    order: 165,
+    order: 3,
     comments:
       "you know I have a robot that can deliver you food , but it might eat some of it :)"
   },
@@ -94,42 +94,42 @@ const customers = [
     id: 14,
     name: "Tala",
     sex: "f",
-    order: 170,
+    order: 5,
     comments: "2 guacamole for me and 3 for my friend Jacky Chan "
   },
   {
     id: 16,
     name: "Abo Al-Sa'adeh",
     sex: "f",
-    order: 180,
+    order: 7,
     comments: "3 guacamole for me and 4 for A5ooooooy "
   },
   {
     id: 17,
     name: "Hani N",
     sex: "m",
-    order: 190,
+    order: 5,
     comments: "eat sleep film Essam While sleeping -on zoom- repeat "
   },
   {
     id: 18,
     name: "Olga",
     sex: "m",
-    order: 200,
+    order: 19,
     comments: "I speak 4 lagueges but I dont speak JavaScript "
   },
   {
     id: 19,
     name: "Yazan",
     sex: "m",
-    order: 210,
+    order: 5,
     comments: "5 guacamole please ,to warm up my stomak before The Mansaf"
   },
   {
     id: 20,
     name: "Khalid aka 'Bu Waleed'",
     sex: "m",
-    order: 215,
+    order: 13,
     comments:
       "I discovered that in Saudi Arabia their word for a bump on your head is قرموع "
   },
@@ -137,7 +137,7 @@ const customers = [
     id: 21,
     name: "Hani H'",
     sex: "m",
-    order: 230,
+    order: 52,
     comments: "50 guacamole for me and 2 for Hammam , ooh make it 1 for Hammam "
   },
   ,
@@ -145,9 +145,9 @@ const customers = [
     id: 22,
     name: "Hamza'",
     sex: "m",
-    order: 235,
+    order: 11,
     comments: "Which Star Wars character works at a restaurant? Darth Waiter "
-  }
+  },
 ];
 
 export default customers;
