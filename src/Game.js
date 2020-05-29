@@ -27,7 +27,7 @@ class Game extends Component {
     score: this.props.score,
     holes: [0, 1, 2, 3, 4, 5],
     counter: 0,
-    ending: 1
+    ending: 1,
   };
 
   Customers = () => {
@@ -128,16 +128,6 @@ class Game extends Component {
   } //End of the randomHoles function
 
   render() {
-    // let CustomerScore = this.props.customers[this.state.counter];
-
-    // if (this.state.counter > customers.length) {
-    //   this.setState({ counter: 1 });
-    // } else {
-    //   this.props.score >= CustomerScore.order * 5
-    //     ? (this.state.counter += 1)
-    //     : (this.state.counter = this.state.counter);
-    // }
-
     if (this.props.time <= 0) {
       return <EndGame />;
     } else
@@ -163,7 +153,7 @@ class Game extends Component {
                   width: "2.5vh",
                   height: "2.5vh",
                   marginLeft: "5px",
-                  alignSelf: "center"
+                  alignSelf: "center",
                 }}
               />
             </h3>
@@ -173,7 +163,7 @@ class Game extends Component {
                 src={mama}
                 className="card-img-fluid text- "
                 alt="..."
-                style={{ width: "20vh", height: "40vh", marginLeft: "5px" }}
+                style={{ width: "12vh", marginLeft: "5px" }}
               />
             </center>
             <Mama />
@@ -181,43 +171,23 @@ class Game extends Component {
           </span>
 
           <div
-            className=" card col-6 align-center border-bottom-0 border-dark "
-            style={{ background: "rgba(255, 255, 255, 0.71)" }}
+            className=" card col-6 align-center border-bottom-0  "
+            style={{ background: "rgba(255, 255, 255, 0.25)" }}
           >
-            <div className="row">
-              <h4
-                className="text-center col"
-                hidden
-                style={{ alignSelf: "center" }}
-              >
-                Time:
-                <span
-                  style={{
-                    color: this.props.time > 10 ? "black" : "red"
-                  }}
-                >
-                  {this.props.time} seconds
-                </span>
-              </h4>
-              <h1 className="col" style={{ alignSelf: "left" }}>
-                Guac-A-Mol
-              </h1>
-
-              <h3 className="col-sm text-center">
-                {this.props.score}
-                <img
-                  src={coin}
-                  className="card-img "
-                  alt="..."
-                  style={{
-                    width: "2.5vh",
-                    height: "2.5vh",
-                    marginLeft: "5px",
-                    alignSelf: "center"
-                  }}
-                />
-              </h3>
-            </div>
+            <h1 className="col-sm text-center" style={{ marginTop: "1rem" }}>
+              {this.props.score}
+              <img
+                src={coin}
+                className="card-img "
+                alt="..."
+                style={{
+                  width: "4vh",
+                  height: "4vh",
+                  marginLeft: "5px",
+                  alignSelf: "center",
+                }}
+              />
+            </h1>
 
             <div className="container-fluid align-center">
               <center>
@@ -267,7 +237,7 @@ class Game extends Component {
                       width: "26vh",
                       height: "34vh",
                       marginLeft: "15px",
-                      marginTop: "120px"
+                      marginTop: "120px",
                     }}
                   />
                 </div>
@@ -277,7 +247,7 @@ class Game extends Component {
                   style={{ width: "65vh" }}
                 >
                   <div className="row align-center ">
-                    {this.state.holes.map(holeID => (
+                    {this.state.holes.map((holeID) => (
                       <Circle usedHole={this.randomHoles(this.state.holes)} />
                     ))}
                   </div>
@@ -311,21 +281,21 @@ class Game extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     score: state.operationsState.score,
     time: state.operationsState.time,
     heart: state.operationsState.heart,
-    menu: state.operationsState.menu
+    menu: state.operationsState.menu,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     Increment: () => dispatch({ type: INCREMENT }),
     dec: () => dispatch({ type: DECREMENT }),
     reset: () => dispatch({ type: RESET }),
-    customers
+    customers,
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Game);

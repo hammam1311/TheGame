@@ -6,7 +6,7 @@ import { connect } from "react-redux";
 class Mama extends Component {
   state = {
     counter: 1,
-    score: this.props.score
+    score: this.props.score,
   };
 
   componentDidMount() {
@@ -23,7 +23,10 @@ class Mama extends Component {
     return (
       <div
         className="card container-fluid  text-black"
-        style={{ background: "rgba(255, 255, 255, 0.71)" }}
+        style={{
+          background: "rgba(255, 255, 255, 0.71)",
+          marginBottom: "10px",
+        }}
       >
         <h5 className="card-title flout-laft container-fluid">
           <img
@@ -48,10 +51,10 @@ class Mama extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     counter: state.counter,
-    score: state.operationsState.score
+    score: state.operationsState.score,
   };
 };
 

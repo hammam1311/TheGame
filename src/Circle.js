@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect, shallowEqual } from "react-redux";
-import { INCREMENT } from "./redux/actions/actionTypes";
+import { increment } from "./redux/actions";
 import Empty from "./images/Empty.png";
 
 import Avocado from "./images/Avocado.png";
@@ -25,15 +25,15 @@ class Circle extends Component {
   state = {
     pressed: false,
     i: this.props.menu - 1,
-    images: [Empty, Avocado, Guacamole],
+    images: [Empty, Avocado, Guacamole, 5],
     images2: [
-      [Empty, Avocado, Guacamole],
-      [Empty, Apple, ApplePie],
-      [Empty, Banana, BananaIce],
-      [Empty, WaterMelon, WaterMelonIce],
-      [Empty, PineApple, PineAppleCake],
-      [Empty, Peach, Mhalabieh]
-    ]
+      [Empty, Avocado, Guacamole, 5],
+      [Empty, Apple, ApplePie, 10],
+      [Empty, Banana, BananaIce, 15],
+      [Empty, WaterMelon, WaterMelonIce, 20],
+      [Empty, PineApple, PineAppleCake, 25],
+      [Empty, Peach, Mhalabieh, 30],
+    ],
   };
 
   componentDidMount() {
@@ -50,25 +50,25 @@ class Circle extends Component {
   }
   handleClick = () => {
     if (this.props.menu === 1) {
-      this.setState({ images: [Empty, Avocado, Guacamole] });
+      this.setState({ images: [Empty, Avocado, Guacamole, 5] });
     }
     if (this.props.menu === 2) {
-      this.setState({ images: [Empty, Apple, ApplePie] });
+      this.setState({ images: [Empty, Apple, ApplePie, 10] });
     }
     if (this.props.menu === 3) {
-      this.setState({ images: [Empty, Banana, BananaIce] });
+      this.setState({ images: [Empty, Banana, BananaIce, 15] });
     }
     if (this.props.menu === 4) {
-      this.setState({ images: [Empty, WaterMelon, WaterMelonIce] });
+      this.setState({ images: [Empty, WaterMelon, WaterMelonIce, 20] });
     }
     if (this.props.menu === 5) {
-      this.setState({ images: [Empty, PineApple, PineAppleCake] });
+      this.setState({ images: [Empty, PineApple, PineAppleCake, 25] });
     }
     if (this.props.menu === 6) {
-      this.setState({ images: [Empty, Peach, Mhalabieh] });
+      this.setState({ images: [Empty, Peach, Mhalabieh, 30] });
     }
     if (this.props.usedHole === 1) {
-      this.props.Increment();
+      this.props.increment(+this.state.images[3]);
       this.setState({ pressed: true });
 
       setTimeout(() => {
@@ -86,8 +86,8 @@ class Circle extends Component {
               this.state.pressed
                 ? this.state.images2[this.state.i][2]
                 : this.props.usedHole === 1
-                  ? this.state.images2[this.state.i][1]
-                  : this.state.images[0]
+                ? this.state.images2[this.state.i][1]
+                : this.state.images[0]
             }
             alt="Logo"
             width="130vh"
@@ -100,16 +100,16 @@ class Circle extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     pressed: state.operationsState.score,
-    menu: state.operationsState.menu
+    menu: state.operationsState.menu,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    Increment: () => dispatch({ type: INCREMENT })
+    increment: (inc) => dispatch(increment(inc)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(Circle);

@@ -5,54 +5,55 @@ import {
   DECREMENTSCORE,
   INCREMENTHEART,
   INCREMENT_MENU,
-  INCREMENT_STORY
+  INCREMENT_STORY,
 } from "./actionTypes";
 
 //Increment The score
-export const increment = () => {
+export const increment = (inc) => {
   return {
-    type: INCREMENT
+    type: INCREMENT,
+    payload: inc,
   };
 };
 
 //Decrement The Time
 export const decrement = () => {
   return {
-    type: DECREMENT
+    type: DECREMENT,
   };
 };
 
 //RESET
 export const reset = () => {
   return {
-    type: RESET
+    type: RESET,
   };
 };
 
 //pay
-export const decrementScore = payCost => {
+export const decrementScore = (payCost) => {
   return {
     type: DECREMENTSCORE,
-    payload: payCost
+    payload: payCost,
   };
 };
 
 //Heart
-export const incrementHeart = HeartInc => {
+export const incrementHeart = (HeartInc) => {
   return {
     type: INCREMENTHEART,
-    payload: HeartInc
+    payload: HeartInc,
   };
 };
 
 //Increment The Menu
 export const IncMenu = () => {
   return {
-    type: INCREMENT_MENU
+    type: INCREMENT_MENU,
   };
 }; //Increment The Menu
 export const IncStory = () => {
   return {
-    type: INCREMENT_STORY
+    type: INCREMENT_STORY,
   };
 };

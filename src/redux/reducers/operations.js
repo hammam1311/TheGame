@@ -5,16 +5,16 @@ import {
   DECREMENTSCORE,
   INCREMENTHEART,
   INCREMENT_MENU,
-  INCREMENT_STORY
+  INCREMENT_STORY,
 } from "../actions/actionTypes";
 
 const initialState = {
-  score: 30,
+  score: 0,
   time: 72000,
-  heart: 5,
+  heart: 0,
   menu: 1,
   reset: false,
-  story: 0
+  story: 0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -22,39 +22,39 @@ const reducer = (state = initialState, action) => {
     case INCREMENT:
       return {
         ...state,
-        score: state.score + 5
+        score: state.score + action.payload,
       };
     case DECREMENT:
       return {
         ...state,
-        time: state.time - 1
+        time: state.time - 1,
       };
     case RESET:
       return {
         ...state,
         score: 0,
         time: 1000,
-        reset: true
+        reset: true,
       };
     case DECREMENTSCORE:
       return {
         ...state,
-        score: state.score - action.payload
+        score: state.score - action.payload,
       };
     case INCREMENTHEART:
       return {
         ...state,
-        heart: state.heart + action.payload
+        heart: state.heart + action.payload,
       };
     case INCREMENT_MENU:
       return {
         ...state,
-        menu: state.menu + 1
+        menu: state.menu + 1,
       };
     case INCREMENT_STORY:
       return {
         ...state,
-        story: state.story + 1
+        story: state.story + 1,
       };
 
     default:

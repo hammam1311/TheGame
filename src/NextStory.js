@@ -13,20 +13,28 @@ import { connect } from "react-redux";
 
 class NextStory extends Component {
   state = {
-    open: false,
-    costm: 1500,
-    costh: 75,
-    storyNumber: 1
+    open: true,
+    costm: 250,
+    costh: 25,
+    storyNumber: 1,
   };
 
-  openModal = () => this.setState({ open: true });
-
+  openModal = () => {
+    if (
+      this.props.score >= this.state.costm &&
+      this.props.heart >= this.state.costh
+    )
+      this.setState({ open: true });
+  };
   next = () => {
     this.setState({ open: false });
-    if (this.props.score >= 1 && this.props.heart >= 1) {
+    if (
+      this.props.score >= this.state.costm &&
+      this.props.heart >= this.state.costh
+    ) {
       this.setState({
         costh: this.state.costh + this.state.costh * 3,
-        costm: this.state.costm + this.state.costm * 6
+        costm: this.state.costm + this.state.costm * 6,
       });
       this.props.IncStory();
       this.setState({ storyNumber: this.state.storyNumber + 1 });
@@ -52,7 +60,7 @@ class NextStory extends Component {
             {this.CurrentStory()}
           </Modal>
         </div>
-        <div className="card" onClick={this.openModal}>
+        <div onClick={this.openModal}>
           <div className="image">
             <img className="card-img-top img-fluid" />
           </div>
@@ -67,7 +75,7 @@ class NextStory extends Component {
                   width: "2.5vh",
                   height: "2.5vh",
                   marginLeft: "5px",
-                  alignSelf: "center"
+                  alignSelf: "center",
                 }}
               />
               + {this.state.costm}
@@ -79,7 +87,7 @@ class NextStory extends Component {
                   width: "2.5vh",
                   height: "2.5vh",
                   marginLeft: "5px",
-                  alignSelf: "center"
+                  alignSelf: "center",
                 }}
               />
               )
@@ -97,18 +105,18 @@ class NextStory extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     score: state.operationsState.score,
     time: state.operationsState.time,
     heart: state.operationsState.heart,
-    menu: state.operationsState.menu
+    menu: state.operationsState.menu,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    IncStory: () => dispatch({ type: INCREMENT_STORY })
+    IncStory: () => dispatch({ type: INCREMENT_STORY }),
   };
 };
 
