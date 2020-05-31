@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import backstory from "./images/backstory.jpg";
-import Story from "./NextStory"
+import Story from "./NextStory";
+import award from "./award.png";
 
 const Home = () => {
   return (
@@ -14,7 +15,8 @@ const Home = () => {
           src={backstory}
           className="card-img-top border border-dark "
           alt="..."
-          style={{ width: "82rem", height: "39rem", marginTop: "10px" }}
+          style={{ width: "75rem", marginTop: "10px" }}
+          onClick={() => alert("Still waiting for the award from Aziz :(")}
         />
 
         <center>
@@ -23,6 +25,7 @@ const Home = () => {
             style={{ background: "rgba(255, 255, 255, 0.71)" }}
           >
             <h4 className="card-text">let me tell you about liala ..</h4>
+
             <p className="card-text">
               <b className="text">
                 Laila and her Mama lived alone in a small town .. one day Liala
@@ -48,12 +51,9 @@ const Home = () => {
           </div>
         </center>
 
-
-
-
-
-        <h3 className="card-title">DONT REFRESH THE SAVE STUFF DOESN'T WORK YET !!!!</h3>
-
+        <h3 className="card-title">
+          NOTE: DONT REFRESH YOU WILL LOSE YOUR PROGRESS
+        </h3>
       </div>
     </div>
   );

@@ -139,7 +139,7 @@ class Game extends Component {
             onLoading={this.handleSongLoading}
             onPlaying={this.handleSongPlaying}
             onFinishedPlaying={this.handleSongFinishedPlaying}
-            volume={0}
+            volume={13}
           />
           <span className=" container-fluid  col-3">
             <br />
@@ -267,8 +267,6 @@ class Game extends Component {
             <br></br>
 
             <Shop />
-            <br></br>
-            <br></br>
             <br></br>
             <Link to="/test">
               <button type="button " class="btn btn-danger btn-lg">

@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { INCREMENT_STORY } from "./redux/actions/actionTypes";
-import cart from "./images/cart.jpg";
-import miniPlace from "./images/miniPlace.jpg";
-import mall from "./images/mall.jpg";
 import Modal from "react-responsive-modal";
 import { Story1 } from "./story";
 import { Story2 } from "./story";
@@ -13,7 +10,7 @@ import { connect } from "react-redux";
 
 class NextStory extends Component {
   state = {
-    open: true,
+    open: false,
     costm: 250,
     costh: 25,
     storyNumber: 1,

@@ -29,10 +29,10 @@ class Circle extends Component {
     images2: [
       [Empty, Avocado, Guacamole, 5],
       [Empty, Apple, ApplePie, 10],
-      [Empty, Banana, BananaIce, 15],
-      [Empty, WaterMelon, WaterMelonIce, 20],
-      [Empty, PineApple, PineAppleCake, 25],
-      [Empty, Peach, Mhalabieh, 30],
+      [Empty, Banana, BananaIce, 25],
+      [Empty, WaterMelon, WaterMelonIce, 60],
+      [Empty, PineApple, PineAppleCake, 100],
+      [Empty, Peach, Mhalabieh, 180],
     ],
   };
 
@@ -56,16 +56,16 @@ class Circle extends Component {
       this.setState({ images: [Empty, Apple, ApplePie, 10] });
     }
     if (this.props.menu === 3) {
-      this.setState({ images: [Empty, Banana, BananaIce, 15] });
+      this.setState({ images: [Empty, Banana, BananaIce, 25] });
     }
     if (this.props.menu === 4) {
-      this.setState({ images: [Empty, WaterMelon, WaterMelonIce, 20] });
+      this.setState({ images: [Empty, WaterMelon, WaterMelonIce, 60] });
     }
     if (this.props.menu === 5) {
-      this.setState({ images: [Empty, PineApple, PineAppleCake, 25] });
+      this.setState({ images: [Empty, PineApple, PineAppleCake, 100] });
     }
     if (this.props.menu === 6) {
-      this.setState({ images: [Empty, Peach, Mhalabieh, 30] });
+      this.setState({ images: [Empty, Peach, Mhalabieh, 180] });
     }
     if (this.props.usedHole === 1) {
       this.props.increment(+this.state.images[3]);

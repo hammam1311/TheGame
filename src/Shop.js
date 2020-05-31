@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 import { INCREMENT_MENU } from "./redux/actions/actionTypes";
 
 import { decrementScore, IncMenu } from "./redux/actions";
-const ShopUpgradeCosts = [5, 250, 500, 1000, 2000];
+const ShopUpgradeCosts = [50, 150, 450, 1000, 1850];
 
 class Shop extends Component {
   state = {
@@ -16,7 +16,7 @@ class Shop extends Component {
     Banana: false,
     WaterMelon: false,
     Pineapple: false,
-    peach: false
+    peach: false,
   };
 
   buyApples() {
@@ -31,7 +31,7 @@ class Shop extends Component {
       let state = this.state;
       this.setState({
         ...state,
-        Apples: upgrade
+        Apples: upgrade,
       });
     }
   }
@@ -48,7 +48,7 @@ class Shop extends Component {
       let state = this.state;
       this.setState({
         ...state,
-        Banana: upgrade
+        Banana: upgrade,
       });
     }
   }
@@ -66,7 +66,7 @@ class Shop extends Component {
       let state = this.state;
       this.setState({
         ...state,
-        WaterMelon: upgrade
+        WaterMelon: upgrade,
       });
     }
   }
@@ -83,7 +83,7 @@ class Shop extends Component {
       let state = this.state;
       this.setState({
         ...state,
-        Pineapple: upgrade
+        Pineapple: upgrade,
       });
     }
   }
@@ -101,12 +101,12 @@ class Shop extends Component {
       let state = this.state;
       this.setState({
         ...state,
-        peach: upgrade
+        peach: upgrade,
       });
     }
   }
   render() {
-    const renderer = () => { };
+    const renderer = () => {};
     return (
       <div>
         <div className="card">
@@ -123,7 +123,7 @@ class Shop extends Component {
                       width: "3.5vh",
                       height: "4vh",
                       marginRight: "5px",
-                      alignSelf: "center"
+                      alignSelf: "center",
                     }}
                   />
                   Monthly apples supply
@@ -137,8 +137,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[0]} $
                     </button>
                   ) : (
-                      <br></br>
-                    )}
+                    <br></br>
+                  )}
                 </li>
 
                 <li className="list-group-item">
@@ -150,7 +150,7 @@ class Shop extends Component {
                       width: "3.5vh",
                       height: "4vh",
                       marginRight: "5px",
-                      alignSelf: "center"
+                      alignSelf: "center",
                     }}
                   />
                   Monthly Banana supply
@@ -164,8 +164,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[1]} $
                     </button>
                   ) : (
-                      <br></br>
-                    )}
+                    <br></br>
+                  )}
                 </li>
 
                 <li className="list-group-item">
@@ -177,7 +177,7 @@ class Shop extends Component {
                       width: "4vh",
                       height: "4vh",
                       marginRight: "5px",
-                      alignSelf: "center"
+                      alignSelf: "center",
                     }}
                   />
                   Monthly Watermelon supply
@@ -191,8 +191,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[2]} $
                     </button>
                   ) : (
-                      <br></br>
-                    )}
+                    <br></br>
+                  )}
                 </li>
 
                 <li className="list-group-item">
@@ -204,7 +204,7 @@ class Shop extends Component {
                       width: "6vh",
                       height: "6vh",
                       marginRight: "5px",
-                      alignSelf: "center"
+                      alignSelf: "center",
                     }}
                   />
                   Monthly pineapple supply
@@ -218,8 +218,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[3]} $
                     </button>
                   ) : (
-                      <br></br>
-                    )}
+                    <br></br>
+                  )}
                 </li>
                 <li className="list-group-item">
                   <img
@@ -230,7 +230,7 @@ class Shop extends Component {
                       width: "5vh",
                       height: "4vh",
                       marginRight: "5px",
-                      alignSelf: "center"
+                      alignSelf: "center",
                     }}
                   />
                   Monthly peach supply
@@ -244,8 +244,8 @@ class Shop extends Component {
                       buy {ShopUpgradeCosts[4]} $
                     </button>
                   ) : (
-                      <br></br>
-                    )}
+                    <br></br>
+                  )}
                 </li>
               </center>
             </ul>
@@ -256,15 +256,15 @@ class Shop extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    score: state.operationsState.score
+    score: state.operationsState.score,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    pay: payCost => dispatch(decrementScore(payCost)),
-    IncMenu: () => dispatch({ type: INCREMENT_MENU })
+    pay: (payCost) => dispatch(decrementScore(payCost)),
+    IncMenu: () => dispatch({ type: INCREMENT_MENU }),
   };
 };
 
